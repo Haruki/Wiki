@@ -191,6 +191,8 @@ Error message and password prompt
 
 <li>Manuelle Netzwerk Konfiguration (Linux)</li>
 
+<li>Neovim auf linux shell</li>
+
 <li>Network devices MS</li>
 
 <li>Netzwerk</li>
@@ -8807,7 +8809,7 @@ Error message and password prompt
 <div created="20180731103345728" modified="20180731103345728" title="$:/state/toc/TableOfContents-TiddlyWiki Konfiguration--81657105">
 <pre>open</pre>
 </div>
-<div list="[[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
+<div list="[[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -8862,7 +8864,7 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1080&quot;
+            &quot;text&quot;: &quot;1200&quot;
         }
     }
 }</pre>
@@ -9224,6 +9226,20 @@ Manuelles Setzen der default route:
 sudo ip route add default via 10.0.1.5
 sudo ip route add default gw 10.0.1.5
 ```
+</pre>
+</div>
+<div created="20180808123512832" modified="20180808123643134" tags="Linux" title="Neovim auf linux shell">
+<pre>1. neovim installieren (ubuntu):
+
+```
+sudo apt-add-repository ppa:neovim-ppa/stable
+sudo apt-get update
+sudo apt-get install neovim
+```
+
+2. default editor auswählen:
+
+`sudo update-alternatives --config editor`
 </pre>
 </div>
 <div created="20180731202933651" modified="20180731204636423" tags="Netzwerk" title="Network devices MS">
