@@ -199,6 +199,8 @@ Error message and password prompt
 
 <li>Linux</li>
 
+<li>Linux Dell Laptop Fan Noise Control</li>
+
 <li>Manuelle Netzwerk Konfiguration (Linux)</li>
 
 <li>Neovim auf linux shell</li>
@@ -8836,7 +8838,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
+<div list="[[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -8887,11 +8889,11 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1920&quot;
+            &quot;text&quot;: &quot;2560&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1200&quot;
+            &quot;text&quot;: &quot;1440&quot;
         }
     }
 }</pre>
@@ -9233,6 +9235,16 @@ nginx['proxy_set_headers'] = {
 </div>
 <div created="20180731090255609" modified="20180731090324658" tags="TableOfContents" title="Linux">
 <pre>Anleitungen für Linux / WSL</pre>
+</div>
+<div created="20180809224318248" modified="20180809224456660" tags="Linux" title="Linux Dell Laptop Fan Noise Control">
+<pre>Der Lüfter wird mit den Standardeinstellungen unter Ubuntu nicht optimal gesteuert (Dell Laptop UNI-Kauf)
+
+Mit den `i8kutils` kann hier eingegriffen werden:
+
+```
+sudo ./smm 30a3
+```
+</pre>
 </div>
 <div created="20180731205915520" modified="20180731210829945" tags="Netzwerk Linux" title="Manuelle Netzwerk Konfiguration (Linux)">
 <pre>Wenn Netzwerkname bei Eingabe von `ifconfig` nicht auftaucht:
