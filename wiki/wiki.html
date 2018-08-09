@@ -9531,10 +9531,16 @@ Tool: &quot;lokale Sicherheitsrichtlinie&quot;
 `Sicherheitseinstellungen -&gt; Kontorichtlinien -&gt; Kontosperrungsrichtlinien`
 </pre>
 </div>
-<div created="20180808132851908" modified="20180808133617735" tags="Linux [[TiddlyWiki Konfiguration]]" title="TiddlyWiki Backup">
+<div created="20180808132851908" modified="20180809104859042" tags="Linux [[TiddlyWiki Konfiguration]]" title="TiddlyWiki Backup">
 <pre>Backup erfolgt in ein github repository: `https://github.com/Haruki/Wiki.git`
+Das TiddlyWiki Verzeichnis in &quot;data&quot; auf dem Server ist dabei das Git-Repository
 
 Das Backup wird per cronjob (`crontab -e` auf Stargazer-server) jeden morgen um 3Uhr ausgeführt.
+
+```
+3       *       *       *       *       /data/TiddlyServer-2.0.14-fixed/github_upload_script.sh
+```
+
 Der cronjob führt  das Skript `github_upload_script.sh` aus dem git-repository aus.
 
 Das Backupskript verwendet als Zugangsdaten den Standarduser mit einem Token von github als Passwort. Siehe [[Git credentials speichern (cli)]]
@@ -9575,7 +9581,7 @@ vboxmanage controlbm vm-name vrdeport 8888
 <div created="20180731090355321" modified="20180731090411098" tags="TableOfContents" title="Windows">
 <pre>Anleitungen für Windows</pre>
 </div>
-<div created="20180809103225846" modified="20180809103717258" tags="" title="Windows symlinks (hard + soft)">
+<div created="20180809103225846" modified="20180809104647307" tags="Windows" title="Windows symlinks (hard + soft)">
 <pre>Softlink erstellen (Datei):
 
 ```
