@@ -231,11 +231,15 @@ Error message and password prompt
 
 <li>Temporäre Login Sperre nach 3 Fehlversuchen</li>
 
+<li>TiddlyWiki Backup</li>
+
 <li>TiddlyWiki Konfiguration</li>
 
 <li>Virtualbox VRDE Ports</li>
 
 <li>Windows</li>
+
+<li>Windows symlinks (hard + soft)</li>
 
 </ul>
 </p>
@@ -8823,7 +8827,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[Git credentials speichern (cli)]] Windows GIT Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
+<div list="[[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -8883,8 +8887,8 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20180731090420761" modified="20180808125958782" title="$:/temp/search">
-<pre>git</pre>
+<div created="20180731090420761" modified="20180808132848297" title="$:/temp/search">
+<pre>TiddlyWiki Backup</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
 <pre>{
@@ -9527,6 +9531,15 @@ Tool: &quot;lokale Sicherheitsrichtlinie&quot;
 `Sicherheitseinstellungen -&gt; Kontorichtlinien -&gt; Kontosperrungsrichtlinien`
 </pre>
 </div>
+<div created="20180808132851908" modified="20180808133617735" tags="Linux [[TiddlyWiki Konfiguration]]" title="TiddlyWiki Backup">
+<pre>Backup erfolgt in ein github repository: `https://github.com/Haruki/Wiki.git`
+
+Das Backup wird per cronjob (`crontab -e` auf Stargazer-server) jeden morgen um 3Uhr ausgeführt.
+Der cronjob führt  das Skript `github_upload_script.sh` aus dem git-repository aus.
+
+Das Backupskript verwendet als Zugangsdaten den Standarduser mit einem Token von github als Passwort. Siehe [[Git credentials speichern (cli)]]
+</pre>
+</div>
 <div created="20180731095807740" modified="20180731095920492" tags="TableOfContents" title="TiddlyWiki Konfiguration">
 <pre>Benötigte Einstellungen und Anleitungen für die Einrichtung von TiddlyWiki auf pimpelkram.com</pre>
 </div>
@@ -9561,6 +9574,39 @@ vboxmanage controlbm vm-name vrdeport 8888
 </div>
 <div created="20180731090355321" modified="20180731090411098" tags="TableOfContents" title="Windows">
 <pre>Anleitungen für Windows</pre>
+</div>
+<div created="20180809103225846" modified="20180809103717258" tags="" title="Windows symlinks (hard + soft)">
+<pre>Softlink erstellen (Datei):
+
+```
+mklink Link Target
+```
+
+Softlink erstellen (Verzeichnis):
+
+```
+mklink /D Link Target
+```
+
+
+Beispiel: `mklink init.vim c:\Users\borsutzha\dotfiles\vim\init.vim`
+
+Ergebnis:
+
+```
+09.08.2018  12:31    &lt;DIR&gt;          .                                                   
+09.08.2018  12:31    &lt;DIR&gt;          ..                                                  
+09.08.2018  12:31    &lt;SYMLINK&gt;      init.vim [c:\Users\borsutzha\dotfiles\vim\init.vim] 
+```
+
+
+Hardlink erstellen:
+
+```
+mklink /H Link Target
+```
+
+Für einen Verzeichnishardlink muss hier `J` statt `H` verwendet werden.</pre>
 </div>
 
 </div>
