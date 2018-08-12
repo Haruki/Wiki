@@ -181,6 +181,8 @@ Error message and password prompt
 
 <li>Caddy Web-Server Konfiguration</li>
 
+<li>cron job konfiguration</li>
+
 <li>Draft of 'TableOfContents'</li>
 
 <li>Emby Media Server</li>
@@ -8838,7 +8840,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
+<div list="[[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -8889,11 +8891,11 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;2560&quot;
+            &quot;text&quot;: &quot;1920&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1440&quot;
+            &quot;text&quot;: &quot;1080&quot;
         }
     }
 }</pre>
@@ -9127,6 +9129,39 @@ errors {
 }
 ```
 </pre>
+</div>
+<div created="20180812093027443" modified="20180812093339677" tags="Linux" title="cron job konfiguration">
+<pre>
+Put a shell script in one of these folders: `/etc/cron.daily`, `/etc/cron.hourly`, `/etc/cron.monthly` or `/etc/cron.weekly`.
+
+If these are not enough for you, you can add more specific tasks e.g. twice a month or every 5 minutes. Go to the terminal and type:
+
+```
+crontab -e
+```
+
+This will open your personal crontab (cron configuration file). The first line in that file explains it all! In every line you can define one command to run and its schedule, and the format is quite simple when you get the hang of it. The structure is:
+
+```
+minute hour day-of-month month day-of-week command
+```
+
+For all the numbers you can use lists, e.g. `5,34,55` in the minutes field will mean run at 5 past, 34 past, and 55 past whatever hour is defined.
+
+You can also use intervals. They are defined like this: `*/20` This example means every 20th, so in the minutes column it is equivalent to 0,20,40.
+
+So to run a command every Monday at 5:30 in the afternoon:
+
+```
+30 17 * * 1 /path/to/command
+```
+or every 15 minutes
+
+```
+*/15 * * * * /path/to/command
+```
+
+Note that the day-of-week goes from 0-6 where 0 is Sunday.</pre>
 </div>
 <div caption="Contents" created="20180731085806296" draft.of="TableOfContents" draft.title="TableOfContents" list-after="$:/core/ui/SideBar/Open" modified="20180731100150072" tags="$:/tags/SideBar" title="Draft of 'TableOfContents'">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
