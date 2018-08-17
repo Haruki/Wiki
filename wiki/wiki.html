@@ -195,6 +195,8 @@ Error message and password prompt
 
 <li>GitLab VM Einrichten</li>
 
+<li>Go / Golang autocomplete für vim / nvim /neovim</li>
+
 <li>kinoxFileScanner Setup</li>
 
 <li>Kodi Konfiguration Belegung Fernbedienung</li>
@@ -8844,7 +8846,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
+<div list="[[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -9238,6 +9240,54 @@ nginx['proxy_set_headers'] = {
 ```
 
 	D.h. NGINX von GitLab erwartet, dass von außen HTTPS gemacht wird, selbst jedoch 	nicht!</pre>
+</div>
+<div created="20180817114802586" modified="20180817120048776" tags="VIM Linux" title="Go / Golang autocomplete für vim / nvim /neovim">
+<pre>
+''1. Neovim benötigt einen Plugin-Manager, um komfortabel Plugins installieren zu können:''
+&quot;&quot;&quot;
+Installieren: https://github.com/junegunn/vim-plug
+Schritte:
+&quot;&quot;&quot;
+
+```
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+init.vim erweitern (Minimal Beispiel):
+
+```
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'junegunn/vim-easy-align'
+call plug#end()
+```
+
+''2. Python 3 Umgebung installieren und Python 3 Modul für neovim installieren:''
+
+```
+sudo apt install python3
+```
+
+PIP3 python package manager installieren:
+
+```
+sudo apt install python3-pip
+```
+
+neovim modul installieren:
+
+```
+pip3 install --user neovim
+```
+
+Prüfen in neovim:
+
+```
+:echo has(&quot;python3&quot;)
+```
+
+
+</pre>
 </div>
 <div created="20180730090607404" modified="20180731151340807" tags="Linux" title="kinoxFileScanner Setup">
 <pre>#clone from github
