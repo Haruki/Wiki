@@ -241,9 +241,13 @@ Error message and password prompt
 
 <li>TiddlyWiki Konfiguration</li>
 
+<li>tmux commands</li>
+
 <li>VIM</li>
 
 <li>VIM / NeoVim Windows Einstellungen</li>
+
+<li>vim / nvim commands</li>
 
 <li>Virtualbox VRDE Ports</li>
 
@@ -8840,7 +8844,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
+<div list="[[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -8895,12 +8899,12 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1080&quot;
+            &quot;text&quot;: &quot;1200&quot;
         }
     }
 }</pre>
 </div>
-<div created="20180731090420761" modified="20180809141922575" title="$:/temp/search">
+<div created="20180731090420761" modified="20180817103902951" title="$:/temp/search">
 <pre>vim</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
@@ -9131,8 +9135,7 @@ errors {
 </pre>
 </div>
 <div created="20180812093027443" modified="20180812093339677" tags="Linux" title="cron job konfiguration">
-<pre>
-Put a shell script in one of these folders: `/etc/cron.daily`, `/etc/cron.hourly`, `/etc/cron.monthly` or `/etc/cron.weekly`.
+<pre>Put a shell script in one of these folders: `/etc/cron.daily`, `/etc/cron.hourly`, `/etc/cron.monthly` or `/etc/cron.weekly`.
 
 If these are not enough for you, you can add more specific tasks e.g. twice a month or every 5 minutes. Go to the terminal and type:
 
@@ -9605,6 +9608,17 @@ Das Backupskript verwendet als Zugangsdaten den Standarduser mit einem Token von
 <div created="20180731095807740" modified="20180731095920492" tags="TableOfContents" title="TiddlyWiki Konfiguration">
 <pre>Benötigte Einstellungen und Anleitungen für die Einrichtung von TiddlyWiki auf pimpelkram.com</pre>
 </div>
+<div created="20180817103400536" modified="20180817103842702" tags="Linux" title="tmux commands">
+<pre>&quot;&quot;&quot;
+split horizontal: `Ctrl-B + &quot;`
+focus other: `Ctrl-B + o`
+resize: `Ctrl-B + -[D|U|L|R] &lt;number&gt;`
+Beispiel: 10 Zeilen verkleinern: `Ctrl-B + -D 10`
+&quot;&quot;&quot;
+
+
+</pre>
+</div>
 <div created="20180809141944375" modified="20180809142006841" tags="TableOfContents" title="VIM">
 <pre>Anleitungen / Einstellungen für VIM (Linux und Windows)</pre>
 </div>
@@ -9618,6 +9632,12 @@ C:\Users\&lt;username&gt;\AppData\Local\nvim
 
 Hier wird mit `mklink` ein link auf die Datei im `dotfiles` repository angelegt.
 Siehe auch [[Windows symlinks (hard + soft)]]</pre>
+</div>
+<div created="20180817104022077" modified="20180817104233381" tags="VIM Linux" title="vim / nvim commands">
+<pre>&quot;&quot;&quot;
+Toggle between open windows: `Ctrl-W + w`
+Or: `Ctrl-W + [h|j|k|l]`
+&quot;&quot;&quot;</pre>
 </div>
 <div created="20180731213204063" modified="20180731214528836" tags="Netzwerk Linux" title="Virtualbox VRDE Ports">
 <pre>Ports auf denen die VMs per Remote Desktop (RDE) erreichbar sind:
