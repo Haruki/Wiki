@@ -9241,7 +9241,7 @@ nginx['proxy_set_headers'] = {
 
 	D.h. NGINX von GitLab erwartet, dass von außen HTTPS gemacht wird, selbst jedoch 	nicht!</pre>
 </div>
-<div created="20180817114802586" modified="20180817120048776" tags="VIM Linux" title="Go / Golang autocomplete für vim / nvim /neovim">
+<div created="20180817114802586" modified="20180817121659559" tags="VIM Linux" title="Go / Golang autocomplete für vim / nvim /neovim">
 <pre>
 ''1. Neovim benötigt einen Plugin-Manager, um komfortabel Plugins installieren zu können:''
 &quot;&quot;&quot;
@@ -9286,6 +9286,29 @@ Prüfen in neovim:
 :echo has(&quot;python3&quot;)
 ```
 
+''3. Code Completion PlugIn in NeoVim installieren:''
+
+Zwischen `call plug#begin` und `call plug#end()` folgende PlugIns in die `init.vim`eintragen:
+
+```
+    Plug 'ncm2/ncm2'
+    Plug 'roxma/nvim-yarp'
+
+    &quot; enable ncm2 for all buffers
+    autocmd BufEnter * call ncm2#enable_for_buffer()
+
+    &quot; IMPORTANTE: :help Ncm2PopupOpen for more information
+    set completeopt=noinsert,menuone,noselect
+    Plug 'ncm2/ncm2-path'
+    Plug 'ncm2/go'
+```
+
+''4. Plug Ins in neovim installieren und prüfen:''
+
+```
+:PlugInstall
+:PlugStatus
+```
 
 </pre>
 </div>
