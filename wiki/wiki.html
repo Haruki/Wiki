@@ -159,6 +159,8 @@ Error message and password prompt
 
 <li>$:/state/toc/TableOfContents-Netzwerk--81657105</li>
 
+<li>$:/state/toc/TableOfContents-Spiele--81657105</li>
+
 <li>$:/state/toc/TableOfContents-TiddlyWiki Konfiguration--81657105</li>
 
 <li>$:/state/toc/TableOfContents-VIM--81657105</li>
@@ -229,6 +231,8 @@ Error message and password prompt
 
 <li>Server Dashboard (Grafana)</li>
 
+<li>Spiele</li>
+
 <li>SSH Client Konfiguration</li>
 
 <li>SSH public key importieren</li>
@@ -238,6 +242,8 @@ Error message and password prompt
 <li>TableOfContents einrichten</li>
 
 <li>Temporäre Login Sperre nach 3 Fehlversuchen</li>
+
+<li>Terraria Server für XMAS und Halloween event</li>
 
 <li>TiddlyWiki Backup</li>
 
@@ -254,6 +260,8 @@ Error message and password prompt
 <li>Virtualbox VRDE Ports</li>
 
 <li>Windows</li>
+
+<li>Windows Startmenu eigene Verknüpfungen / shortcuts</li>
 
 <li>Windows symlinks (hard + soft)</li>
 
@@ -8837,6 +8845,9 @@ Error message and password prompt
 <div created="20180731150747960" modified="20180731150747960" title="$:/state/toc/TableOfContents-Netzwerk--81657105">
 <pre>open</pre>
 </div>
+<div created="20180819101447823" modified="20180819101447823" title="$:/state/toc/TableOfContents-Spiele--81657105">
+<pre>open</pre>
+</div>
 <div created="20180731103345728" modified="20180731103345728" title="$:/state/toc/TableOfContents-TiddlyWiki Konfiguration--81657105">
 <pre>open</pre>
 </div>
@@ -8846,7 +8857,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
+<div list="[[Windows Startmenu eigene Verknüpfungen / shortcuts]] [[Terraria Server für XMAS und Halloween event]] [[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -8901,7 +8912,7 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1200&quot;
+            &quot;text&quot;: &quot;1080&quot;
         }
     }
 }</pre>
@@ -9614,6 +9625,9 @@ Nautilus (Ubuntu smb client) mit Server verbinden:
 # OpenTSDB (Datenquelle)
 # Splunk</pre>
 </div>
+<div created="20180819101418220" modified="20180819101429722" tags="TableOfContents" title="Spiele">
+<pre></pre>
+</div>
 <div created="20180804121138691" modified="20180804121241973" tags="Linux" title="SSH Client Konfiguration">
 <pre>Auf Client-Seite in der Datei `~/.ssh/config`:
 
@@ -9660,6 +9674,30 @@ ssh-keygen -i -f /data/publicPuttyKey &gt; authorized_keys
 
 Tool: &quot;lokale Sicherheitsrichtlinie&quot;
 `Sicherheitseinstellungen -&gt; Kontorichtlinien -&gt; Kontosperrungsrichtlinien`
+</pre>
+</div>
+<div created="20180819101014419" modified="20180819101442989" tags="Windows Spiele" title="Terraria Server für XMAS und Halloween event">
+<pre>Windows Verknüpfung mit `RunAsDate.exe` und `TerrariaServer.exe`:
+
+XMas:
+
+```
+D:\Utils\RunAsDate\RunAsDate.exe /movetime 25\12\2013 00:00:00 &quot;D:\Spiele\steam\steamapps\common\terraria\TerrariaServer.exe&quot; 
+```
+
+Halloween:
+
+```
+D:\Utils\RunAsDate\RunAsDate.exe /movetime 31\10\2013 01:00:00 &quot;D:\Spiele\steam\steamapps\common\terraria\TerrariaServer.exe&quot; 
+```
+
+
+Ausführen in:
+
+```
+D:\Spiele\steam\steamapps\common\terraria
+```
+
 </pre>
 </div>
 <div created="20180808132851908" modified="20180809104859042" tags="Linux [[TiddlyWiki Konfiguration]]" title="TiddlyWiki Backup">
@@ -9747,6 +9785,15 @@ vboxmanage controlbm vm-name vrdeport 8888
 </div>
 <div created="20180731090355321" modified="20180731090411098" tags="TableOfContents" title="Windows">
 <pre>Anleitungen für Windows</pre>
+</div>
+<div created="20180819101808641" modified="20180819101940910" tags="Windows" title="Windows Startmenu eigene Verknüpfungen / shortcuts">
+<pre>Im Dateimanager folgenden Pfad öffnen:
+
+```
+%AppData%\Microsoft\Windows\Start Menu\Programs
+```
+
+Alle Verknüpfungen, welche hier abgelegt werden, können über das Startmenu gefunden / ausgeführt werden.</pre>
 </div>
 <div created="20180809103225846" modified="20180809104647307" tags="Windows" title="Windows symlinks (hard + soft)">
 <pre>Softlink erstellen (Datei):
