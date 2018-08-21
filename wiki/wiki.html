@@ -261,6 +261,8 @@ Error message and password prompt
 
 <li>Windows</li>
 
+<li>Windows Login Fingerabdruck / Fingerprint domain user</li>
+
 <li>Windows Startmenu eigene Verknüpfungen / shortcuts</li>
 
 <li>Windows symlinks (hard + soft)</li>
@@ -8857,7 +8859,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[Windows Startmenu eigene Verknüpfungen / shortcuts]] [[Terraria Server für XMAS und Halloween event]] [[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
+<div list="[[Windows Login Fingerabdruck / Fingerprint domain user]] [[Windows Startmenu eigene Verknüpfungen / shortcuts]] [[Terraria Server für XMAS und Halloween event]] [[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -8912,7 +8914,7 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1080&quot;
+            &quot;text&quot;: &quot;1200&quot;
         }
     }
 }</pre>
@@ -9785,6 +9787,19 @@ vboxmanage controlbm vm-name vrdeport 8888
 </div>
 <div created="20180731090355321" modified="20180731090411098" tags="TableOfContents" title="Windows">
 <pre>Anleitungen für Windows</pre>
+</div>
+<div created="20180821121725525" modified="20180821122134190" tags="Windows" title="Windows Login Fingerabdruck / Fingerprint domain user">
+<pre>Wenn unter `Anmeldeoptionen` die Einstellungen für Fingerabdruck bzw. PIN login ausgegraut sind muss folgender Registry Key gesetzt werden:
+(Das Problem tritt nur bei domain usern auf)
+
+```
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System]
+&quot;AllowDomainPINLogon&quot;=dword:00000001
+```
+
+Siehe auch:
+[[Thread auf Microsoft Technet|https://social.technet.microsoft.com/Forums/windows/en-US/84a0bd50-1360-4a94-bfb3-b049ecace521/pin-and-fingerprint-signin-options-unavailable-greyed-out-in-windows-10-1607-enterprise?forum=win10itprogeneral]]
+</pre>
 </div>
 <div created="20180819101808641" modified="20180819101940910" tags="Windows" title="Windows Startmenu eigene Verknüpfungen / shortcuts">
 <pre>Im Dateimanager folgenden Pfad öffnen:
