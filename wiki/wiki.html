@@ -247,6 +247,8 @@ Error message and password prompt
 
 <li>Tampermonkey externe Editierung</li>
 
+<li>Tampermonkey externes Stylesheet (CSS)</li>
+
 <li>Temporäre Login Sperre nach 3 Fehlversuchen</li>
 
 <li>Terraria Server für XMAS und Halloween event</li>
@@ -8865,7 +8867,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[Tampermonkey externe Editierung]] [[Draft of 'TableOfContents einrichten']] [[TiddlyWiki Konfiguration]] [[Draft of 'Samba Server Konfiguration']] [[Windows Login Fingerabdruck / Fingerprint domain user]] [[Windows Startmenu eigene Verknüpfungen / shortcuts]] [[Terraria Server für XMAS und Halloween event]] [[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
+<div list="[[Tampermonkey externes Stylesheet (CSS)]] [[Tampermonkey externe Editierung]] [[Draft of 'TableOfContents einrichten']] [[TiddlyWiki Konfiguration]] [[Draft of 'Samba Server Konfiguration']] [[Windows Login Fingerabdruck / Fingerprint domain user]] [[Windows Startmenu eigene Verknüpfungen / shortcuts]] [[Terraria Server für XMAS und Halloween event]] [[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -9723,6 +9725,25 @@ Beispiel:
 // ==/UserScript==
 ```
 
+</pre>
+</div>
+<div created="20180831130836518" modified="20180831131057382" tags="Windows" title="Tampermonkey externes Stylesheet (CSS)">
+<pre>Einbindung von Custom CSS in ein Tampermonkey Skript
+
+Headereintrag:
+
+```
+// @resource    customCSS css/ui-darkness/jquery-ui-1.8.16.custom.css
+// @grant       GM_addStyle
+// @grant       GM_getResourceText
+```
+
+JavaScript Teil:
+
+```
+var newCSS = GM_getResourceText (&quot;customCSS&quot;);
+GM_addStyle (newCSS);
+```
 </pre>
 </div>
 <div created="20180804233442651" modified="20180804233830819" tags="Windows" title="Temporäre Login Sperre nach 3 Fehlversuchen">
