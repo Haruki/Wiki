@@ -8918,17 +8918,17 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1920&quot;
+            &quot;text&quot;: &quot;1680&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1200&quot;
+            &quot;text&quot;: &quot;1050&quot;
         }
     }
 }</pre>
 </div>
-<div created="20180731090420761" modified="20180829101056740" title="$:/temp/search">
-<pre>tiddl</pre>
+<div created="20180731090420761" modified="20180907132708061" title="$:/temp/search">
+<pre>caddy</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
 <pre>{
@@ -9048,7 +9048,7 @@ Error message and password prompt
 [img[https://i.imgur.com/MAhBwv2.png]]
 ```</pre>
 </div>
-<div created="20180801084955445" modified="20180804120658700" tags="Netzwerk Linux" title="Caddy Web-Server Konfiguration">
+<div created="20180801084955445" modified="20180907132818738" tags="Netzwerk Linux" title="Caddy Web-Server Konfiguration">
 <pre>Konfiguration / Caddyfile  (Stand 01.08.2018)
 
 ```
@@ -9091,7 +9091,7 @@ Wants=network-online.target systemd-networkd-wait-online.service
 
 [Service]
 Restart=on-abnormal
-
+AmbientCapabilities=CAP_NET_BIND_SERVICE
 ; User and group the process will run as.
 User=captain
 Group=captain
