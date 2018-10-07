@@ -191,6 +191,8 @@ Error message and password prompt
 
 <li>Draft of 'TableOfContents'</li>
 
+<li>elasticsearch vm.max_map_count</li>
+
 <li>Emby Media Server</li>
 
 <li>Festplatten standby mit hdparm</li>
@@ -8867,7 +8869,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[Tampermonkey externes Stylesheet (CSS)]] [[Tampermonkey externe Editierung]] [[Draft of 'TableOfContents einrichten']] [[TiddlyWiki Konfiguration]] [[Draft of 'Samba Server Konfiguration']] [[Windows Login Fingerabdruck / Fingerprint domain user]] [[Windows Startmenu eigene Verknüpfungen / shortcuts]] [[Terraria Server für XMAS und Halloween event]] [[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
+<div list="[[elasticsearch vm.max_map_count]] [[Tampermonkey externes Stylesheet (CSS)]] [[Tampermonkey externe Editierung]] [[Draft of 'TableOfContents einrichten']] [[TiddlyWiki Konfiguration]] [[Draft of 'Samba Server Konfiguration']] [[Windows Login Fingerabdruck / Fingerprint domain user]] [[Windows Startmenu eigene Verknüpfungen / shortcuts]] [[Terraria Server für XMAS und Halloween event]] [[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -8918,17 +8920,17 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1680&quot;
+            &quot;text&quot;: &quot;2560&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1050&quot;
+            &quot;text&quot;: &quot;1440&quot;
         }
     }
 }</pre>
 </div>
-<div created="20180731090420761" modified="20180907132708061" title="$:/temp/search">
-<pre>caddy</pre>
+<div created="20180731090420761" modified="20181007224622712" title="$:/temp/search">
+<pre>elastics</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
 <pre>{
@@ -9224,6 +9226,14 @@ Nautilus (Ubuntu smb client) mit Server verbinden:
 &lt;&lt;toc-selective-expandable 'TableOfContents'&gt;&gt;
 
 &lt;/div&gt;</pre>
+</div>
+<div created="20181007224625561" modified="20181007224800942" tags="Linux" title="elasticsearch vm.max_map_count">
+<pre>damit elastic search auf ubuntu starten kann muss eine konfigurationseinstellung vorgenommen werden als root:
+
+```
+sudo sysctl -w vm.max_map_count=262144
+```
+</pre>
 </div>
 <div created="20180731094749899" modified="20180731151431290" tags="Linux" title="Emby Media Server">
 <pre>Anleitung zur Installation von Emby inkl. Kodi Plugin.
