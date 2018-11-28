@@ -185,8 +185,6 @@ Error message and password prompt
 
 <li>cron job konfiguration</li>
 
-<li>Draft of 'Samba Server Konfiguration'</li>
-
 <li>Draft of 'TableOfContents einrichten'</li>
 
 <li>Draft of 'TableOfContents'</li>
@@ -8869,7 +8867,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[Samba Server Konfiguration]] [[elasticsearch vm.max_map_count]] [[Tampermonkey externes Stylesheet (CSS)]] [[Tampermonkey externe Editierung]] [[Draft of 'TableOfContents einrichten']] [[TiddlyWiki Konfiguration]] [[Draft of 'Samba Server Konfiguration']] [[Windows Login Fingerabdruck / Fingerprint domain user]] [[Windows Startmenu eigene Verknüpfungen / shortcuts]] [[Terraria Server für XMAS und Halloween event]] [[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
+<div list="[[elasticsearch vm.max_map_count]] [[Tampermonkey externes Stylesheet (CSS)]] [[Tampermonkey externe Editierung]] [[Draft of 'TableOfContents einrichten']] [[TiddlyWiki Konfiguration]] [[Samba Server Konfiguration]] [[Windows Login Fingerabdruck / Fingerprint domain user]] [[Windows Startmenu eigene Verknüpfungen / shortcuts]] [[Terraria Server für XMAS und Halloween event]] [[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -8924,13 +8922,13 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1080&quot;
+            &quot;text&quot;: &quot;1200&quot;
         }
     }
 }</pre>
 </div>
-<div created="20180731090420761" modified="20181007224622712" title="$:/temp/search">
-<pre>elastics</pre>
+<div created="20180731090420761" modified="20181128103744422" title="$:/temp/search">
+<pre>tiddly</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
 <pre>{
@@ -9190,30 +9188,6 @@ or every 15 minutes
 ```
 
 Note that the day-of-week goes from 0-6 where 0 is Sunday.</pre>
-</div>
-<div created="20180731211742924" draft.of="Samba Server Konfiguration" draft.title="Samba Server Konfiguration" modified="20180829102559016" tags="Linux" title="Draft of 'Samba Server Konfiguration'">
-<pre>Achtung bei 14.04: Bei Einrichtung über Nautilus ggf. das Paket `„libpam-smbpass“` nachinstallieren.
-
-```
-[global] 
-  workgroup=WORKGROUP 
-  server string = %h server 
-  security = user 
-  encrypt passwords = true 
-  invalid users = root 
-[data] 
-  path = /data 
-  comment = data auf ubuntu-server-lts 
-  available = yes 
-  browsable = yes 
-  guest ok = no 
-  writeable = yes 
-  valid users = admiral 
-```
-
-Nautilus (Ubuntu smb client) mit Server verbinden:
-[img[https://i.imgur.com/m9yzQlx.jpg]]
-</pre>
 </div>
 <div created="20180731100709129" draft.of="TableOfContents einrichten" draft.title="TableOfContents einrichten" modified="20180829102156071" tags="[[TiddlyWiki Konfiguration]]" title="Draft of 'TableOfContents einrichten'">
 <pre>Siehe imgur Screenshot
@@ -9640,7 +9614,7 @@ ipconfig /renew
 
 </pre>
 </div>
-<div created="20180731211742924" modified="20180731212605239" tags="Linux" title="Samba Server Konfiguration">
+<div created="20180731211742924" modified="20181128103841183" tags="Linux" title="Samba Server Konfiguration">
 <pre>Achtung bei 14.04: Bei Einrichtung über Nautilus ggf. das Paket `„libpam-smbpass“` nachinstallieren.
 
 ```
