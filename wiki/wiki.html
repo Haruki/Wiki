@@ -9492,8 +9492,10 @@ nvm install node
 
 </pre>
 </div>
-<div created="20181201040901274" modified="20181201174415118" tags="Oracle Linux" title="Oracle Database XE 18c Installation">
-<pre>Basis ist ein frisch installiertes Oracle Linux 7.6. (mit Gnome GUI und Developer Tools)
+<div created="20181201040901274" modified="20181201190211529" tags="Oracle Linux" title="Oracle Database XE 18c Installation">
+<pre>Siehe auch: [[Oracle DropBox Backup]]
+
+Basis ist ein frisch installiertes Oracle Linux 7.6. (mit Gnome GUI und Developer Tools)
 Das Oracle Linux laeuft auf VirtualBox.
 Guest Additions sind installiert (ohne 2D Beschleunigung).
 
@@ -9517,7 +9519,7 @@ yum update -y
 
 --&gt; Snapshot machen.
 
-Teil2:
+''Teil2:''
 
 Der verwendete Hostname der Oracle Maschine muss in der Datei `/etc/hosts` eingetragen sein mit der IP-Adresse mit der von aussen zugegriffen wird (static dhcp Adresse):
 
@@ -9535,7 +9537,7 @@ Oracle Database preinstall:
 yum install oracle-database-preinstall-18c
 ```
 
-Teil3:
+''Teil3:''
 
 Von der Oracle Webseite das RPM Paket fuer Oracle XE 18c downloaden.
 https://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html
@@ -9549,7 +9551,7 @@ yum localinstall /home/oracle/oracle-database-xe-18c-1.0-1.x86_64.rpm
 --&gt; RPM löschen , Snapshot machen
 
 
-Teil4:
+''Teil4:''
 
 Datenbank erstellen und konfigurieren.
 
@@ -9571,13 +9573,15 @@ Mit dem Konfigurationsskript wird die Konfiguration angewendet:
 
 Das Skript fragt auch die fuer die accounts `sys`, `system` und `pdbadmin` zu erstellenden passwörter ab. (gleiches passwort fuer alle).
 
+Die Dateien `tnsnames.ora` und `listener.ora` muessen ggf. noch angepasst werden, damit dort die korrekten Werte fuer host (10.0.1.31) und port (1521) stehen.
+Die Dateien liegen in `/opt/oracle/product/18c/dbhomeXE/network/admin/`.
 
 
-Teil5:
+''Teil5:''
 
 Umgebungsvariablen und Verbindung.
 
-Fuer user oracle folgendes script erstellen und mit der `.bash_rc` ausfuehren:
+Fuer user oracle folgendes script erstellen und mit der `.bashrc` ausfuehren:
 
 ```
 #!/bin/bash
@@ -9596,24 +9600,32 @@ connection string: `name/pass@10.0.1.31:1521/xepdb1`
 
 </pre>
 </div>
-<div created="20180804124414833" modified="20180804131513125" tags="Linux" title="Oracle DropBox Backup">
-<pre>Backup Skript läuft direkt auf der Oracle VM:
+<div created="20180804124414833" modified="20181201190241613" tags="Linux" title="Oracle DropBox Backup">
+<pre>Siehe auch:  [[Oracle Database XE 18c Installation]]
+
+
+Backup Skript läuft direkt auf der Oracle VM:
 
 `/home/oracle/Desktop/export_bestfilmz.sh`
 
 
+Das unten folgende Skript schreibt mit dem user `oracle` die erzeugten Datenbank-Dumpdateien auf das VirtualBox Dateisystem auf den Server (skynet) in das dortige dropbox Verzeichnis. Damit das funktioniert muss der user `oracle` ggf. noch in die Gruppe `vboxsf` aufgenommen werden (von root):
+
+```
+usermod -aG vboxsf oracle
+```
+
+Das Skript: 
+
 ```
 #!/bin/bash
-ORACLE_HOME=/home/oracle/app/oracle/product/12.1.0/dbhome_1
-export ORACLE_HOME
-PATH=$PATH:${ORACLE_HOME}/bin
-export PATH
+#Umgebungsvariablen und Path muessen bereits gesetzt sein per .bash_rc
 
-expdp bestfilmz/bestfilmz@ORCL schemas=bestfilmz directory=dump_dir dumpfile=bestfilmz_$(date +%Y-%m-%d).dmp logfile=bestfilmz_$(date +%Y-%m-%d).log
+expdp system/oracle@10.0.1.31:1521/xepdb1 schemas=bestfilmz directory=dump_dir dumpfile=bestfilmz_$(date +%Y-%m-%d).dmp logfile=bestfilmz_$(date +%Y-%m-%d).log
 
 rm /home/oracle/Desktop/bestfilmz_$(date +%Y-%m-%d).log
 
-mv /home/oracle/Desktop/bestfilmz_$(date +%Y-%m-%d).dmp /media/sf_ADMIRAL_DATA/dropbox/
+mv /home/oracle/Desktop/bestfilmz_$(date +%Y-%m-%d).dmp /media/sf_data/wdraid/dropbox/
 ```
 
 Das Skript wird auf der Oracle VM vom User `oracle` per cronjob ausgeführt.
@@ -9627,26 +9639,31 @@ Inhalt (Täglich um 3 Uhr morgens):
 
 ''Voraussetzungen:''
 
-# Das Oracle-Directory `dump_dir` muss konfiguriert sein mit Rechten für den Oracle-User `bestfilmz`.
-# Dazu muss als erstes der user `bestfilmz` directories erstellen dürfen:
-Die folgenden Befehle müssen als `sys` user ausgeführt werden:
+# Das Oracle-Directory `dump_dir` muss konfiguriert sein.
+
+Der folgende Befehl muss als `system` user ausgeführt werden in der pluggabledb `xepdb1`:
 
 ```
-grant create any directory to bestfilmz
-grant EXP_FULL_DATABASE to bestfilmz
-grant IMP_FULL_DATABASE to bestfilmz
+sqlplus system/oracle@10.0.1.31:1521/xepdb1
 ```
 
-# Der user `bestfilmz` kann nun das Verzeichnis anlegen:
 
 ```
 create or replace directory DUMP_DIR as '/home/oracle/Desktop';
 ```
 
+# Wenn die Datenbank neu ist, muss noch der tablespace `bestfilmz` vom user `system` erstellt werden:
+
+```
+create tablespace bestfilmz logging datafile 'bestfilmz.dbf' size 32m autoextend on next 32m maxsize 2048m extent management local;
+```
+
+
+
 
 ''Backup einspielen:''
 
-# Altdaten entfernen:
+# Altdaten entfernen falls vorhanden:
 
 ```
 drop user bestfilmz CASCADE;
@@ -9655,7 +9672,7 @@ drop user bestfilmz CASCADE;
 # Import ausführen:
 
 ```
-impdp system/oracle@ORCL schemas=bestfilmz directory=dump_dir dumpfile=bestfilmz_datum.dmp logfile=bestfilmz_datum.log
+impdp system/oracle@10.0.1.31:1521/xepdb1 schemas=bestfilmz directory=dump_dir dumpfile=bestfilmz_2018-11-30.dmp logfile=bestfilmz_datum.log
 ```
 
 </pre>
