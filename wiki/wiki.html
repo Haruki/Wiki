@@ -227,6 +227,8 @@ Error message and password prompt
 
 <li>PI-Hole hosts Datei für pimpelkram.com</li>
 
+<li>Pi-Hole update</li>
+
 <li>Refresh DHCP</li>
 
 <li>Router Konfiguration MS</li>
@@ -274,6 +276,8 @@ Error message and password prompt
 <li>Windows Startmenu eigene Verknüpfungen / shortcuts</li>
 
 <li>Windows symlinks (hard + soft)</li>
+
+<li>Yamon Yet another Monitor</li>
 
 </ul>
 </p>
@@ -8867,7 +8871,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[elasticsearch vm.max_map_count]] [[Tampermonkey externes Stylesheet (CSS)]] [[Tampermonkey externe Editierung]] [[Draft of 'TableOfContents einrichten']] [[TiddlyWiki Konfiguration]] [[Samba Server Konfiguration]] [[Windows Login Fingerabdruck / Fingerprint domain user]] [[Windows Startmenu eigene Verknüpfungen / shortcuts]] [[Terraria Server für XMAS und Halloween event]] [[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
+<div list="[[Pi-Hole update]] [[Yamon Yet another Monitor]] [[Router Konfiguration MS]] [[elasticsearch vm.max_map_count]] [[Tampermonkey externes Stylesheet (CSS)]] [[Tampermonkey externe Editierung]] [[Draft of 'TableOfContents einrichten']] [[TiddlyWiki Konfiguration]] [[Samba Server Konfiguration]] [[Windows Login Fingerabdruck / Fingerprint domain user]] [[Windows Startmenu eigene Verknüpfungen / shortcuts]] [[Terraria Server für XMAS und Halloween event]] [[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -8927,8 +8931,8 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20180731090420761" modified="20181130005102934" title="$:/temp/search">
-<pre>vrde</pre>
+<div created="20180731090420761" modified="20181201015137501" title="$:/temp/search">
+<pre>hole</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
 <pre>{
@@ -9583,6 +9587,13 @@ sudo service dnsmasq force-reload
 
 </pre>
 </div>
+<div created="20181201015154393" modified="20181201015358928" tags="Netzwerk Linux" title="Pi-Hole update">
+<pre>SSH into raspberrypi (10.0.1.33)
+
+pihole -up
+
+Achtung: in der Datei /etc/resolve.conf sollte ein gueltiger DNS server stehen.</pre>
+</div>
 <div created="20180731205348610" modified="20180731205754477" tags="Netzwerk" title="Refresh DHCP">
 <pre>''Linux:''
 
@@ -9909,6 +9920,14 @@ mklink /H Link Target
 ```
 
 Für einen Verzeichnishardlink muss hier `J` statt `H` verwendet werden.</pre>
+</div>
+<div created="20181201014835933" modified="20181201015037102" tags="Netzwerk Linux" title="Yamon Yet another Monitor">
+<pre>Traffic Monitor fuer DDWRT Router.
+
+Router URL: http://10.0.1.5/user/index.html
+
+Guide: http://usage-monitoring.com/download.php
+</pre>
 </div>
 
 </div>
