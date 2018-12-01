@@ -8933,8 +8933,8 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20180731090420761" modified="20181201015137501" title="$:/temp/search">
-<pre>hole</pre>
+<div created="20180731090420761" modified="20181201162948856" title="$:/temp/search">
+<pre>orac</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
 <pre>{
@@ -9492,12 +9492,21 @@ nvm install node
 
 </pre>
 </div>
-<div created="20181201040901274" modified="20181201153008138" tags="Oracle Linux" title="Oracle Database XE 18c Installation">
+<div created="20181201040901274" modified="20181201174415118" tags="Oracle Linux" title="Oracle Database XE 18c Installation">
 <pre>Basis ist ein frisch installiertes Oracle Linux 7.6. (mit Gnome GUI und Developer Tools)
 Das Oracle Linux laeuft auf VirtualBox.
 Guest Additions sind installiert (ohne 2D Beschleunigung).
 
 Ausfuehrliche Anleitung von Oracle: https://docs.oracle.com/en/database/oracle/oracle-database/18/xeinl/procedure-installing-oracle-database-xe.html
+
+
+Firewall abschalten (fuer Zugriff von aussen):
+
+```
+systemctl stop firewalld
+systemctl disable firewalld
+```
+
 
 
 Alle Updates wurden eingespielt:
@@ -9561,6 +9570,30 @@ Mit dem Konfigurationsskript wird die Konfiguration angewendet:
 ```
 
 Das Skript fragt auch die fuer die accounts `sys`, `system` und `pdbadmin` zu erstellenden passwörter ab. (gleiches passwort fuer alle).
+
+
+
+Teil5:
+
+Umgebungsvariablen und Verbindung.
+
+Fuer user oracle folgendes script erstellen und mit der `.bash_rc` ausfuehren:
+
+```
+#!/bin/bash
+export ORACLE_HOME=/opt/oracle/product/18c/dbhomeXE
+export PATH=$PATH:$ORACLE_HOME/bin
+export ORACLE_SID=XE 
+export ORAENV_ASK=NO 
+. /opt/oracle/product/18c/dbhomeXE/bin/oraenv
+```
+
+`ACHTUNG: Mit der &quot;dot space&quot; variante werden scripte aufgerufen, wenn statt einer neuen shell die parentshell verwendet werden soll. Nur so ist es moeglich in skripten Umgebungsvariablen dauerhaft zu setzen.`
+
+
+
+connection string: `name/pass@10.0.1.31:1521/xepdb1`
+
 </pre>
 </div>
 <div created="20180804124414833" modified="20180804131513125" tags="Linux" title="Oracle DropBox Backup">
