@@ -221,6 +221,8 @@ Error message and password prompt
 
 <li>Node Version Manager</li>
 
+<li>Oracle Database XE 18c Installation</li>
+
 <li>Oracle DropBox Backup</li>
 
 <li>pfSense VM Konfiguration</li>
@@ -8871,7 +8873,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[Pi-Hole update]] [[Yamon Yet another Monitor]] [[Router Konfiguration MS]] [[elasticsearch vm.max_map_count]] [[Tampermonkey externes Stylesheet (CSS)]] [[Tampermonkey externe Editierung]] [[Draft of 'TableOfContents einrichten']] [[TiddlyWiki Konfiguration]] [[Samba Server Konfiguration]] [[Windows Login Fingerabdruck / Fingerprint domain user]] [[Windows Startmenu eigene Verknüpfungen / shortcuts]] [[Terraria Server für XMAS und Halloween event]] [[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
+<div list="[[Oracle Database XE 18c Installation]] [[Pi-Hole update]] [[Yamon Yet another Monitor]] [[Router Konfiguration MS]] [[elasticsearch vm.max_map_count]] [[Tampermonkey externes Stylesheet (CSS)]] [[Tampermonkey externe Editierung]] [[Draft of 'TableOfContents einrichten']] [[TiddlyWiki Konfiguration]] [[Samba Server Konfiguration]] [[Windows Login Fingerabdruck / Fingerprint domain user]] [[Windows Startmenu eigene Verknüpfungen / shortcuts]] [[Terraria Server für XMAS und Halloween event]] [[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -9205,7 +9207,7 @@ Note that the day-of-week goes from 0-6 where 0 is Sunday.</pre>
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20181007224625561" modified="20181007224800942" tags="Linux" title="elasticsearch vm.max_map_count">
+<div created="20181007224625561" modified="20181201040554123" tags="Linux" title="elasticsearch vm.max_map_count">
 <pre>damit elastic search auf ubuntu starten kann muss eine konfigurationseinstellung vorgenommen werden als root:
 
 ```
@@ -9490,6 +9492,39 @@ nvm install node
 
 </pre>
 </div>
+<div created="20181201040901274" modified="20181201042840528" tags="Oracle Linux" title="Oracle Database XE 18c Installation">
+<pre>Basis ist ein frisch installiertes Oracle Linux 7.6. (mit Gnome GUI und Developer Tools)
+Das Oracle Linux laeuft auf VirtualBox.
+Guest Additions sind installiert (ohne 2D Beschleunigung).
+Alle Updates wurden eingespielt:
+
+```
+yum update -y
+```
+
+--&gt; Snapshot machen.
+
+Teil2:
+Oracle Database preinstall:
+
+```
+yum install oracle-database-preinstall-18c
+```
+
+Teil3:
+Von der Oracle Webseite das RPM Paket fuer Oracle XE 18c downloaden.
+https://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html
+
+RPM installieren:
+
+```
+yum localinstall /home/oracle/oracle-database-xe-18c-1.0-1.x86_64.rpm
+```
+
+--&gt; RPM löschen , Snapshot machen
+
+</pre>
+</div>
 <div created="20180804124414833" modified="20180804131513125" tags="Linux" title="Oracle DropBox Backup">
 <pre>Backup Skript läuft direkt auf der Oracle VM:
 
@@ -9587,10 +9622,12 @@ sudo service dnsmasq force-reload
 
 </pre>
 </div>
-<div created="20181201015154393" modified="20181201015358928" tags="Netzwerk Linux" title="Pi-Hole update">
+<div created="20181201015154393" modified="20181201040640168" tags="Netzwerk Linux" title="Pi-Hole update">
 <pre>SSH into raspberrypi (10.0.1.33)
 
+```
 pihole -up
+```
 
 Achtung: in der Datei /etc/resolve.conf sollte ein gueltiger DNS server stehen.</pre>
 </div>
