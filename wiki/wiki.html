@@ -9492,7 +9492,7 @@ nvm install node
 
 </pre>
 </div>
-<div created="20181201040901274" modified="20181201190211529" tags="Oracle Linux" title="Oracle Database XE 18c Installation">
+<div created="20181201040901274" modified="20181202010120970" tags="Oracle Linux" title="Oracle Database XE 18c Installation">
 <pre>Siehe auch: [[Oracle DropBox Backup]]
 
 Basis ist ein frisch installiertes Oracle Linux 7.6. (mit Gnome GUI und Developer Tools)
@@ -9594,7 +9594,17 @@ export ORAENV_ASK=NO
 
 `ACHTUNG: Mit der &quot;dot space&quot; variante werden scripte aufgerufen, wenn statt einer neuen shell die parentshell verwendet werden soll. Nur so ist es moeglich in skripten Umgebungsvariablen dauerhaft zu setzen.`
 
+Datenbank starten (als root):
 
+```
+/etc/init.d/oracle-xe-18c start
+```
+
+Datenbank stoppen (als root):
+
+```
+/etc/init.d/oracle-xe-18c stop
+```
 
 connection string: `name/pass@10.0.1.31:1521/xepdb1`
 
