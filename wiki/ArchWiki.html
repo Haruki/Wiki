@@ -199,6 +199,8 @@ Error message and password prompt
 
 <li>Installation</li>
 
+<li>neovim / nvim copy paste system clipboard</li>
+
 <li>Screen Tearing Inspiron e5520 intel grafik</li>
 
 <li>TableOfContents</li>
@@ -8818,7 +8820,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[ag Such-Tool &quot;silver-searcher&quot;]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
+<div list="[[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[ag Such-Tool &quot;silver-searcher&quot;]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -9045,6 +9047,18 @@ die letzte Fließkommazahl gibt die transparenz an.</pre>
 </div>
 <div created="20181215142615690" modified="20181215142730430" tags="TableOfContents" title="Installation">
 <pre>zu Installieren oder bei Installation zu beachten</pre>
+</div>
+<div created="20181226172351907" modified="20181226172633571" tags="Tools" title="neovim / nvim copy paste system clipboard">
+<pre>out of the box kann neovim bzw. nvim nicht das system clipboard nutzen.
+Das geht sobald das tool `xsel` installiert ist mit:
+
+```
+sudo pacman -S xsel
+```
+
+neovim kann nun das + register nutzen per  `&quot;+y`
+
+</pre>
 </div>
 <div created="20181217092011744" modified="20181217092958982" tags="" title="Screen Tearing Inspiron e5520 intel grafik">
 <pre>Out of the box ist bei der Installation auf dem Dell Inspiron e5520 Notebook für die Intel Grafik kein V-Sync aktiviert. D.h. z.B. der Browser oder auch der Mediaplayer `mpv` zeigen &quot;tearing&quot;.
