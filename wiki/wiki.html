@@ -8928,13 +8928,13 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1200&quot;
+            &quot;text&quot;: &quot;1080&quot;
         }
     }
 }</pre>
 </div>
-<div created="20180731090420761" modified="20181219140955115" title="$:/temp/search">
-<pre>tidd</pre>
+<div created="20180731090420761" modified="20181226125856008" title="$:/temp/search">
+<pre>sam</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
 <pre>{
@@ -9760,7 +9760,7 @@ ipconfig /renew
 
 </pre>
 </div>
-<div created="20180731211742924" modified="20181128103841183" tags="Linux" title="Samba Server Konfiguration">
+<div created="20180731211742924" modified="20181226132228140" tags="Linux" title="Samba Server Konfiguration">
 <pre>Achtung bei 14.04: Bei Einrichtung über Nautilus ggf. das Paket `„libpam-smbpass“` nachinstallieren.
 
 ```
@@ -9779,6 +9779,19 @@ ipconfig /renew
   writeable = yes 
   valid users = admiral 
 ```
+
+Der user muss noch hinzugefügt werden mit:
+
+```
+sudo smbpasswd -a &lt;username&gt;
+```
+
+Anschließend muss smbd nochmal neu gestartet werden:
+
+```
+sudo systemctl restart smdb.service
+```
+
 
 Nautilus (Ubuntu smb client) mit Server verbinden:
 [img[https://i.imgur.com/m9yzQlx.jpg]]
