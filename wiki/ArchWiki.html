@@ -9001,7 +9001,7 @@ arch package (pacman) `the_silver_searcher`
 
 </pre>
 </div>
-<div created="20190110125232990" modified="20190110195830561" tags="Configuration" title="ArchWSL Windows Installation mit i3">
+<div created="20190110125232990" modified="20190110200838616" tags="Configuration" title="ArchWSL Windows Installation mit i3">
 <pre>ArchWSL: https://github.com/yuk7/ArchWSL
 
 Installationsanleitung: https://www.youtube.com/watch?v=DUXONNnLW5g
@@ -9032,6 +9032,22 @@ user:
 useradd -m -G wheel walter
 passwd walter
 ```
+
+zsh installieren.
+.zshrc erweitern mit `export DISPLAY=:0`
+
+Launch skript für i3 erstellen: `/home/walter/.scripts/wlaunch`
+
+```
+source /home/walter/.scripts/wlaunch
+i3
+```
+sudoer anpassen (gruppe wheel einkommentieren)
+
+```
+visudo
+```
+
 
 
 </pre>
