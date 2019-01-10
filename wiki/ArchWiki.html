@@ -191,7 +191,7 @@ Error message and password prompt
 
 <li>ag Such-Tool &quot;silver-searcher&quot;</li>
 
-<li>Arch WSL Windows Installation mit i3</li>
+<li>ArchWSL Windows Installation mit i3</li>
 
 <li>block devices &quot;lsblk&quot; mit UUID und Model</li>
 
@@ -8822,7 +8822,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[Arch WSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[ag Such-Tool &quot;silver-searcher&quot;]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
+<div list="[[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[ag Such-Tool &quot;silver-searcher&quot;]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -8882,8 +8882,8 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20180731090420761" modified="20190110104726452" title="$:/temp/search">
-<pre>J</pre>
+<div created="20180731090420761" modified="20190110125159247" title="$:/temp/search">
+<pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
 <pre>{
@@ -9001,71 +9001,17 @@ arch package (pacman) `the_silver_searcher`
 
 </pre>
 </div>
-<div created="20190110110035773" modified="20190110114310416" tags="Configuration" title="Arch WSL Windows Installation mit i3">
-<pre>1. Neueses Release installieren von
-https://github.com/yuk7/ArchWSL
+<div created="20190110125232990" modified="20190110130106655" tags="Configuration" title="ArchWSL Windows Installation mit i3">
+<pre>ArchWSL: https://github.com/yuk7/ArchWSL
 
-`Arch.exe` ausführen als Administrator.
+Installationsanleitung: https://www.youtube.com/watch?v=DUXONNnLW5g
 
-2. Windows X-Server installieren von
-https://sourceforge.net/projects/vcxsrv/
-
-3. Anleitung von Github folgen (Arch.exe options + pacman-key Einrichtung)
-
-4. Youtbue Anleitung: https://www.youtube.com/watch?v=DUXONNnLW5g
-
-
-''Schritte aus Video:''
-
-''a)'' User anlegen:
-
-```
-useradd -m -G wheel walter
-```
-
-''b)'' Passwort festlegen:
-
-```
-passwd walter
-```
-
-''c)'' Sudoers Datei anpassen: `/etc/sudoers`
-
-```
-visudo
-```
-
-Zeile auskommentieren für die Gruppe Wheel
-
-''d)'' Pakete `base-devel` + `git` und `zsh` installieren
-
-''e)'' oh-my-zsh installieren.
-
-''f)'' Folgenden Eintrag in `.zshrc` hinzufügen:
-
-```
-export DISPLAY=:0
-```
-
-''g)'' i3 launch Skript: `~/scripts/wlaunch`
-
-```
-source ~/.zshrc
-i3
-```
-
-''h)'' VBS Startskript für ArchShell + Windows X Server: `c:\data\ArchWSL\start.vbs`
+''Starskript''
 
 ```
 Set shell = CreateObject(&quot;WScript.Shell&quot; ) 
 shell.Run &quot;&quot;&quot;C:\Program Files\VcXsrv\vcxsrv.exe&quot;&quot; :0 -screen 0 @1 -nodecoration -wgl&quot;	
 shell.Run &quot;c:\data\ArchWSL\Arch.exe run &quot;&quot;~/.scripts/wlaunch&quot;&quot;&quot;, 0
-```
-
-''i)'' Paket `i3` installieren:
-
-```
-sudo pacman -S i3
 ```
 
 </pre>
