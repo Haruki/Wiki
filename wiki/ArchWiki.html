@@ -9138,9 +9138,15 @@ pacman -S libusb-compat
 ```
 </pre>
 </div>
-<div created="20190306131024626" modified="20190306131132179" tags="" title="entr   Tool zur Reaktion auf file changes">
-<pre>Download: `http://eradman.com/entrproject/`&lt;br/&gt;
-Install: `configure` plus `make` plus `make install`</pre>
+<div created="20190306131024626" modified="20190306201324237" tags="" title="entr   Tool zur Reaktion auf file changes">
+<pre>Download (tar.gz): `http://eradman.com/entrproject/`&lt;br/&gt;
+Install: `configure` plus `make` plus `make install`
+
+Beispiel: 
+
+```
+ls *.css *.html | entr reload-browser Firefox
+```</pre>
 </div>
 <div created="20181224020835084" modified="20181224022146187" tags="Configuration" title="i3 Hintergrundbild">
 <pre>Composite manager muss installiert sein wie z.B.  `compton`
