@@ -179,11 +179,15 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
+<li>File Upload (server side)</li>
+
 <li>GIT</li>
 
 <li>GIT add upstream (fork source)</li>
 
 <li>TableOfContents</li>
+
+<li>Web</li>
 
 </ul>
 </p>
@@ -8777,7 +8781,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="GIT [[GIT add upstream (fork source)]] $:/Manager TableOfContents" title="$:/StoryList">
+<div list="Web [[File Upload (server side)]] [[GIT add upstream (fork source)]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -8949,7 +8953,16 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20181219100125575" modified="20181219100147221" tags="TableOfContents" title="GIT">
+<div created="20190408125028679" modified="20190408125927443" title="File Upload (server side)">
+<pre>Benötigt für `inventory server` (Bilder hochladen) &lt;br&gt;
+Datei: `imageUpload.java` &lt;br&gt;
+Umsetzung filtert die Bilder nach content type aus dem multipart form.
+
+Recherche Quellen:
+1. [[https://www.firstfewlines.com/post/spark-java-file-upload-example/]]
+Achtung: hier wird der &quot;Part&quot; direkt mit namen angesprochen, was man nicht immer eine gute Idee ist, da hier die namen im Request mit dem Namen des Parts auf der ServerSeite übereinstimmen müssen.</pre>
+</div>
+<div created="20181219100125575" modified="20190408125532248" tags="TableOfContents" title="GIT">
 <pre></pre>
 </div>
 <div created="20181219095908535" modified="20181219105157588" tags="GIT" title="GIT add upstream (fork source)">
@@ -8979,6 +8992,9 @@ git fetch upstream
 &lt;&lt;toc-selective-expandable 'TableOfContents'&gt;&gt;
 
 &lt;/div&gt;</pre>
+</div>
+<div created="20190408125534703" modified="20190408125929904" tags="TableOfContents" title="Web">
+<pre></pre>
 </div>
 
 </div>
