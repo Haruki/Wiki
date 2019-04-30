@@ -201,6 +201,8 @@ Error message and password prompt
 
 <li>command line fuzzy finder</li>
 
+<li>Command line: relativen Pfad in absoluten Pfad umwandeln</li>
+
 <li>Compile Teensy_loader_cli on Arch</li>
 
 <li>entr   Tool zur Reaktion auf file changes</li>
@@ -8841,7 +8843,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
+<div list="[[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -9159,6 +9161,16 @@ find -maxdepth 1 -name '*png' -type f  | fzf -m | sxiv -t -s f -i
 ```
 
 `-m` ist für das Multiselect per Tab bzw. Shift+Tab</pre>
+</div>
+<div created="20190430155134763" modified="20190430155441697" tags="Tools" title="Command line: relativen Pfad in absoluten Pfad umwandeln">
+<pre>Das Tool `readlink` kann relative Pfade in absolute Pfade umwandeln.&lt;br&gt;
+Beispiel:&lt;br&gt;
+
+```
+readlink -e &quot;data/test.txt&quot; 
+```
+
+ergibt den absoluten Pfad `/mnt/c/data/test.txt`.</pre>
 </div>
 <div created="20181217151413682" modified="20181217151643708" tags="Tools" title="Compile Teensy_loader_cli on Arch">
 <pre>Hintergrund zu Teensy Loader für Linux: https://www.pjrc.com/teensy/loader_cli.html
