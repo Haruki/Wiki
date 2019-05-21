@@ -219,6 +219,8 @@ Error message and password prompt
 
 <li>Screen Tearing Inspiron e5520 intel grafik</li>
 
+<li>ssh terminal problem with WSL</li>
+
 <li>Such-Tool silver-searcher Befehl ag</li>
 
 <li>TableOfContents</li>
@@ -8843,7 +8845,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
+<div list="[[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -8903,8 +8905,8 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20180731090420761" modified="20190409080259625" title="$:/temp/search">
-<pre>zeichen</pre>
+<div created="20180731090420761" modified="20190521091006215" title="$:/temp/search">
+<pre>ssh</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
 <pre>{
@@ -9268,6 +9270,19 @@ EndSection
 
 
 </pre>
+</div>
+<div created="20190521091156082" modified="20190521091448003" tags="Configuration" title="ssh terminal problem with WSL">
+<pre>Das WSL Terminal verhält sich nicht korrekt, wenn eine SSH Verbindung zu einem z.B. Ubuntu aufgebaut wird.&lt;br&gt;
+Backspace z.B. wird nicht korrekt interpretiert.&lt;br&gt;
+Lösung: Beim Einloggin in einen Server muss die Variable `TERM` mit einem für den Server bekannten Wert gesetzt werden.&lt;br&gt;
+
+Per Alias:&lt;br&gt;
+
+```
+alias ssh='TERM=xterm ssh'
+```
+
+Damit kann der `ssh` Befehl wie gewohnt verwendet werden und die `TERM` Umgebungsvariable wird automatisch gesetzt.</pre>
 </div>
 <div created="20181222230549577" modified="20190301105853215" tags="Tools" title="Such-Tool silver-searcher Befehl ag">
 <pre>ubuntu package: `silversearcher-ag`
