@@ -8914,7 +8914,7 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1200&quot;
+            &quot;text&quot;: &quot;1080&quot;
         }
     }
 }</pre>
@@ -9330,11 +9330,11 @@ xdotool search --onlyvisible --class vivaldi windowfocus key --window vivaldi 'c
 
 Sendet `Ctrl+r` an den browser vivaldi, um den aktuellen tab neu zu laden.</pre>
 </div>
-<div created="20181217152142177" modified="20190525200409617" tags="Tools" title="Teensy Loader CLI Aufruf für LFKeyboards TKL">
+<div created="20181217152142177" modified="20190526120923813" tags="Tools" title="Teensy Loader CLI Aufruf für LFKeyboards TKL">
 <pre>Nachdem der Sourcecode vom Teensy Loader erfolgreich kompiliert werden konnte: [[Compile Teensy_loader_cli on Arch]], Muss der Aufruf wie folgt aussehen (vorausgesetzt die Firmware liegt ebenfalls korrekt kompiliert vor:
 
 ```
-teensy_loader_cli -mcu=at90usb646 -w hexfile.hex
+sudo teensy_loader_cli --mcu=at90usb646 -w hexfile.hex
 ```
 
 </pre>
