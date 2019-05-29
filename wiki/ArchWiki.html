@@ -9040,13 +9040,32 @@ alias dfg=&quot;df -h | grep -v 'tmp\|loop'&quot;
 
 der backslash escaped bei grep das pipe symbol.</pre>
 </div>
-<div created="20190528181549797" modified="20190528181758469" tags="Installation" title="Arch from scratch installation">
-<pre>1. grub mit efi
+<div created="20190528181549797" modified="20190529000115313" tags="Installation" title="Arch from scratch installation">
+<pre>Anleitung:
+https://wiki.archlinux.de/title/Anleitung_für_Einsteiger#Systemkonfiguration
+
+uefi installation, partitionierung mit gdisk
+
+
+1. grub mit efi
 vorher modprobe efivarfs
 dann in chroot (arch-chroot /mnt/) den grub install mit efi ausführen.
 
 2. efibootmgr muss noch installiert sein
 pacman -S efibootmgr
+
+3.network managegement (auto config network on boot)
+create profile for netctl
+cp profile to /etc/netctl
+sudo netctl enable ethernet-dhcp
+
+4. xorg benötigt eine separate keyboard keymap konfig
+Voraussetzung paket:  libxkbcommon-x11 per pacman
+dann: sudo localectl set-x11-keymap de pc105 nodeadkeys
+
+5. falls arch beim booten ins efi shell zurückfällt:
+Anleitung: https://www.linuxbabe.com/virtualbox/install-arch-linux-uefi-hardware-virtualbox
+Abschnitt &quot;Drop into the EFI Shell&quot;
 </pre>
 </div>
 <div created="20190308214238795" modified="20190308214509508" tags="" title="Arch on WSL: libQt5Core.so.5 not found">
