@@ -231,6 +231,8 @@ Error message and password prompt
 
 <li>Pi-Hole update</li>
 
+<li>RDP Remote Desktop failed logins log</li>
+
 <li>Refresh DHCP</li>
 
 <li>Router Konfiguration MS</li>
@@ -8877,7 +8879,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[show git commits per user in time period]] [[Windows 10 AltGr not working]] [[Oracle Database XE 18c Installation]] [[Pi-Hole update]] [[Yamon Yet another Monitor]] [[Router Konfiguration MS]] [[elasticsearch vm.max_map_count]] [[Tampermonkey externes Stylesheet (CSS)]] [[Tampermonkey externe Editierung]] [[Draft of 'TableOfContents einrichten']] [[TiddlyWiki Konfiguration]] [[Samba Server Konfiguration]] [[Windows Login Fingerabdruck / Fingerprint domain user]] [[Windows Startmenu eigene Verknüpfungen / shortcuts]] [[Terraria Server für XMAS und Halloween event]] [[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
+<div list="[[RDP Remote Desktop failed logins log]] [[show git commits per user in time period]] [[Windows 10 AltGr not working]] [[Oracle Database XE 18c Installation]] [[Pi-Hole update]] [[Yamon Yet another Monitor]] [[Router Konfiguration MS]] [[elasticsearch vm.max_map_count]] [[Tampermonkey externes Stylesheet (CSS)]] [[Tampermonkey externe Editierung]] [[Draft of 'TableOfContents einrichten']] [[TiddlyWiki Konfiguration]] [[Samba Server Konfiguration]] [[Windows Login Fingerabdruck / Fingerprint domain user]] [[Windows Startmenu eigene Verknüpfungen / shortcuts]] [[Terraria Server für XMAS und Halloween event]] [[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -8928,17 +8930,17 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1920&quot;
+            &quot;text&quot;: &quot;2560&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1200&quot;
+            &quot;text&quot;: &quot;1440&quot;
         }
     }
 }</pre>
 </div>
-<div created="20180731090420761" modified="20190514084025859" title="$:/temp/search">
-<pre>git</pre>
+<div created="20180731090420761" modified="20190610103442111" title="$:/temp/search">
+<pre>rdp</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
 <pre>{
@@ -9741,6 +9743,28 @@ pihole -up
 ```
 
 Achtung: in der Datei /etc/resolve.conf sollte ein gueltiger DNS server stehen.</pre>
+</div>
+<div created="20190610103450794" modified="20190610104330142" tags="Windows" title="RDP Remote Desktop failed logins log">
+<pre>Logging aktivieren, sodass in der Ereignisanzeige fehlgeschlagene RDP logins sichtbar sind:&lt;br&gt;
+
+Gruppenrichtlineneditor:&lt;br&gt;
+Computerkonfiguration &gt; Windows-Einstellungen &gt; Sicherheitseinstellungen &gt;Erweiterte Überwachungsrichtlinienkonfiguration &gt; Systemüberwachungsrichtlinien... &gt; Kontoanmeldung:
+
+&quot;Überprüfen der Anmeldeinformationen überwachen&quot; umstellen auf &quot;Fehler&quot;.&lt;br&gt;
+
+Im Ereignisprotokoll wird dadurch ein neues Event erzeugt mit der ID 4776.&lt;br&gt;
+
+Zur Anzeige des Events in der Ereignisanzeige eine neue &quot;benutzerdefinierte Ansicht (Filter)&quot; erstellen:&lt;br&gt;
+
+Ereignisanzeige:&lt;br&gt;
+Oben rechts bei &quot;Aktionen&quot; &gt; &quot;Benutzerdefinierte Ansicht erstellen&quot;&lt;br&gt;
+
+Protokolliert: Jederzeit:&lt;br&gt;
+Ereignisebene: alle anhaken&lt;br&gt;
+&quot;Per Protokoll&quot; Protokolle: &quot;Windows Protokolle&quot;&lt;br&gt;
+
+Ereignis-ID: 4776
+</pre>
 </div>
 <div created="20180731205348610" modified="20180731205754477" tags="Netzwerk" title="Refresh DHCP">
 <pre>''Linux:''
