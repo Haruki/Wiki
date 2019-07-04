@@ -159,6 +159,8 @@ Error message and password prompt
 
 <li>$:/state/toc/TableOfContents-Netzwerk--81657105</li>
 
+<li>$:/state/toc/TableOfContents-Oracle--81657105</li>
+
 <li>$:/state/toc/TableOfContents-Spiele--81657105</li>
 
 <li>$:/state/toc/TableOfContents-TiddlyWiki Konfiguration--81657105</li>
@@ -8871,6 +8873,9 @@ Error message and password prompt
 <div created="20180731150747960" modified="20180731150747960" title="$:/state/toc/TableOfContents-Netzwerk--81657105">
 <pre>open</pre>
 </div>
+<div created="20190626102127199" modified="20190626102127199" title="$:/state/toc/TableOfContents-Oracle--81657105">
+<pre>open</pre>
+</div>
 <div created="20180819101447823" modified="20180819101447823" title="$:/state/toc/TableOfContents-Spiele--81657105">
 <pre>open</pre>
 </div>
@@ -8883,7 +8888,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="Windows [[Oracle user password expired]] Oracle [[RDP Remote Desktop failed logins log]] [[show git commits per user in time period]] [[Windows 10 AltGr not working]] [[Oracle Database XE 18c Installation]] [[Pi-Hole update]] [[Yamon Yet another Monitor]] [[Router Konfiguration MS]] [[elasticsearch vm.max_map_count]] [[Tampermonkey externes Stylesheet (CSS)]] [[Tampermonkey externe Editierung]] [[Draft of 'TableOfContents einrichten']] [[TiddlyWiki Konfiguration]] [[Samba Server Konfiguration]] [[Windows Login Fingerabdruck / Fingerprint domain user]] [[Windows Startmenu eigene Verknüpfungen / shortcuts]] [[Terraria Server für XMAS und Halloween event]] [[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
+<div list="[[Oracle user password expired]] [[RDP Remote Desktop failed logins log]] [[show git commits per user in time period]] [[Windows 10 AltGr not working]] [[Oracle Database XE 18c Installation]] [[Pi-Hole update]] [[Yamon Yet another Monitor]] [[Router Konfiguration MS]] [[elasticsearch vm.max_map_count]] [[Tampermonkey externes Stylesheet (CSS)]] [[Tampermonkey externe Editierung]] [[Draft of 'TableOfContents einrichten']] [[TiddlyWiki Konfiguration]] [[Samba Server Konfiguration]] [[Windows Login Fingerabdruck / Fingerprint domain user]] [[Windows Startmenu eigene Verknüpfungen / shortcuts]] [[Terraria Server für XMAS und Halloween event]] [[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -9709,7 +9714,7 @@ impdp system/oracle@10.0.1.31:1521/xepdb1 schemas=bestfilmz directory=dump_dir d
 
 </pre>
 </div>
-<div created="20190626101118220" modified="20190626102025999" tags="Oracle" title="Oracle user password expired">
+<div created="20190626101118220" modified="20190704100645579" tags="Oracle" title="Oracle user password expired">
 <pre>disable Passwort expiration:&lt;br&gt;
 
 1. Profil ermitteln und für das Profil (meist DEFAULT) die Passwort expiration disablen:
@@ -9725,6 +9730,15 @@ alter profile &lt;profile_name&gt; limit password_life_time UNLIMITED;
 alter user user_name identified by new_password account unlock;
 ```
 
+3. das gleiche gilt für user `system`, welcher für die bestfilmz backups verwendet wird.
+Hier kann die Änderung ebenfalls nur von `sys` durchgeführt werden. &lt;br&gt;
+Zusätzlich ist hier die connection direct auf der oracle maschine notwendig, damit folgender Fehler vermieden wird:&lt;br&gt;
+https://jameshuangsj.wordpress.com/2017/07/07/ora-65066-the-specified-changes-must-apply-to-all-containers-in-12c/
+
+```
+sqlplus sys/ora18c as sysdba
+alter user system identified by oracle account unlock;
+```
 
 </pre>
 </div>
