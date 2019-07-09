@@ -221,6 +221,8 @@ Error message and password prompt
 
 <li>java / kotlin</li>
 
+<li>Linux graphical renaming tool</li>
+
 <li>neovim / nvim copy paste system clipboard</li>
 
 <li>Screen Tearing Inspiron e5520 intel grafik</li>
@@ -8863,7 +8865,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
+<div list="[[Linux graphical renaming tool]] [[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -8923,8 +8925,8 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20180731090420761" modified="20190607222626950" title="$:/temp/search">
-<pre>intel</pre>
+<div created="20180731090420761" modified="20190709144002174" title="$:/temp/search">
+<pre>rena</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
 <pre>{
@@ -9205,7 +9207,7 @@ sudo lsblk -o NAME,FSTYPE,UUID,RO,RM,SIZE,STATE,OWNER,GROUP,MODE,TYPE,MOUNTPOINT
 
 </pre>
 </div>
-<div created="20190709135828303" modified="20190709140216614" tags="Tools" title="Bulk Renaming with gawk/awk">
+<div created="20190709135828303" modified="20190709144845528" tags="Tools" title="Bulk Renaming with gawk/awk">
 <pre>```
 find . -iregex '.*LALALALA.*' | gawk 'match($0,/S([[:digit:]])/,a) {print &quot;mv&quot;,&quot;\&quot;&quot;$0&quot;\&quot; LALALA_LALALA_part&quot;a[1]&quot;.mp4&quot; | &quot;sh&quot;}'
 ```
@@ -9303,6 +9305,11 @@ sudo pacman -S kotlin
 ```
 
 Es wird automatsich ein `openjdk` installiert. Die genaue Version kann bei der Installation noch ausgewählt werden.</pre>
+</div>
+<div created="20190709144846304" modified="20190709144941055" tags="Tools" title="Linux graphical renaming tool">
+<pre>`gprename`&lt;br&gt;
+
+</pre>
 </div>
 <div created="20181226172351907" modified="20181226172633571" tags="Tools" title="neovim / nvim copy paste system clipboard">
 <pre>out of the box kann neovim bzw. nvim nicht das system clipboard nutzen.
