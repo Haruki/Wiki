@@ -243,6 +243,8 @@ Error message and password prompt
 
 <li>XEV Keycode Tool</li>
 
+<li>Xorg DPMS Bildschirm Konfiguration</li>
+
 <li>Zeichensatz / Encoding konvertieren</li>
 
 </ul>
@@ -8865,7 +8867,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[Linux graphical renaming tool]] [[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
+<div list="[[Xorg DPMS Bildschirm Konfiguration]] [[Linux graphical renaming tool]] [[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -9207,7 +9209,7 @@ sudo lsblk -o NAME,FSTYPE,UUID,RO,RM,SIZE,STATE,OWNER,GROUP,MODE,TYPE,MOUNTPOINT
 
 </pre>
 </div>
-<div created="20190709135828303" modified="20190709144845528" tags="Tools" title="Bulk Renaming with gawk/awk">
+<div created="20190709135828303" modified="20190804111508968" tags="Tools" title="Bulk Renaming with gawk/awk">
 <pre>```
 find . -iregex '.*LALALALA.*' | gawk 'match($0,/S([[:digit:]])/,a) {print &quot;mv&quot;,&quot;\&quot;&quot;$0&quot;\&quot; LALALA_LALALA_part&quot;a[1]&quot;.mp4&quot; | &quot;sh&quot;}'
 ```
@@ -9415,6 +9417,32 @@ verwenden.</pre>
 nützlich sein.
 
 So ist `ö` z.B. als `odiaeresis` einzutragen.</pre>
+</div>
+<div created="20190804110602176" modified="20190804111610471" tags="" title="Xorg DPMS Bildschirm Konfiguration">
+<pre>xorg Konfiguration fuer DPMS:&lt;br&gt;
+Automatisches Bildschirmabschalten wird deaktiviert :&lt;br&gt;
+Datei: `/etc/X11/xorg.conf.d/10-monitor.conf`
+
+```
+Section &quot;Monitor&quot; 
+    Identifier &quot;HDMI1&quot;
+    Option &quot;DPMS&quot; &quot;false&quot;
+EndSection
+
+Section &quot;ServerLayout&quot;
+    Identifier &quot;ServerLayout0&quot;
+    Option &quot;StandbyTime&quot; &quot;0&quot;
+    Option &quot;SuspendTime&quot; &quot;0&quot;
+    Option &quot;OffTime&quot;     &quot;0&quot;
+    Option &quot;BlankTime&quot;   &quot;0&quot;
+EndSection
+
+
+
+Section &quot;Extensions&quot;
+    Option      &quot;DPMS&quot; &quot;false&quot;
+EndSection
+```</pre>
 </div>
 <div created="20190409080313813" modified="20190409081255051" tags="Tools" title="Zeichensatz / Encoding konvertieren">
 <pre>Change character encoding of text file:&lt;br&gt;
