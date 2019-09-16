@@ -249,6 +249,8 @@ Error message and password prompt
 
 <li>Tools</li>
 
+<li>VirtualBox guest problems (e.g. copy paste)</li>
+
 <li>watch dmesg</li>
 
 <li>XEV Keycode Tool</li>
@@ -8898,7 +8900,7 @@ autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[chromium / chrome 3D acceleration in virtualbox]] [[mount cifs mit user = owner automatisch]] [[mount cifs smb permission denied]] [[Convert Windows line endings to Linux line endings]] [[(Neo)Vim Konfiguration]] [[Xorg DPMS Bildschirm Konfiguration]] [[Linux graphical renaming tool]] [[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
+<div list="[[VirtualBox guest problems (e.g. copy paste)]] [[chromium / chrome 3D acceleration in virtualbox]] [[mount cifs mit user = owner automatisch]] [[mount cifs smb permission denied]] [[Convert Windows line endings to Linux line endings]] [[(Neo)Vim Konfiguration]] [[Xorg DPMS Bildschirm Konfiguration]] [[Linux graphical renaming tool]] [[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -9505,6 +9507,36 @@ sudo teensy_loader_cli --mcu=at90usb646 -w hexfile.hex
 </div>
 <div created="20181215142754555" modified="20181215142811397" tags="TableOfContents" title="Tools">
 <pre>tools</pre>
+</div>
+<div created="20190916150711932" modified="20190916151216119" tags="" title="VirtualBox guest problems (e.g. copy paste)">
+<pre>Falls z.B. copy paste nicht funktioniert:&lt;br&gt;
+&lt;br&gt;
+Ggf. muss im Linux-Client noch das Tool `VBoxClient` ausgeführt werden.&lt;br&gt;
+Damit werden die VirtualBox Services für z.B. das Clipboard etc. gestartet:&lt;br&gt;
+
+```
+Usage: VBoxClient --clipboard|--draganddrop|--display|--checkhostversion|--seamless|check3d|--vmsvga|--vmsvga-x11[-d|--nodaemon]
+Starts the VirtualBox DRM/X Window System guest services.
+
+Options:
+  --clipboard        starts the shared clipboard service
+  --draganddrop      starts the drag and drop service
+  --display          starts the display management service
+  --checkhostversion starts the host version notifier service
+  --check3d          tests whether 3D pass-through is enabled
+  --seamless         starts the seamless windows service
+  --vmsvga           starts VMSVGA dynamic resizing for DRM
+  --vmsvga-x11       starts VMSVGA dynamic resizing for X11
+  -f, --foreground   run in the foreground (no daemonizing)
+  -d, --nodaemon     continues running as a system service
+  -h, --help         shows this help text
+  -V, --version      shows version information
+```
+
+&lt;br&gt;
+Aufruf hinzufügen zu `.zshrc` oder `.xinitrc` : `VBoxClient-all`
+&lt;br&gt;
+</pre>
 </div>
 <div created="20190525201651506" modified="20190525201751176" tags="Tools" title="watch dmesg">
 <pre>`tail -f` funktioniert mit `dmesg` nicht.&lt;br&gt;
