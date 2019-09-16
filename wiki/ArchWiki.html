@@ -207,6 +207,8 @@ Error message and password prompt
 
 <li>Bulk Renaming with gawk/awk</li>
 
+<li>chromium / chrome 3D acceleration in virtualbox</li>
+
 <li>command line fuzzy finder</li>
 
 <li>Command line: relativen Pfad in absoluten Pfad umwandeln</li>
@@ -8896,7 +8898,7 @@ autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[mount cifs mit user = owner automatisch]] [[mount cifs smb permission denied]] [[Convert Windows line endings to Linux line endings]] [[(Neo)Vim Konfiguration]] [[Xorg DPMS Bildschirm Konfiguration]] [[Linux graphical renaming tool]] [[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
+<div list="[[chromium / chrome 3D acceleration in virtualbox]] [[mount cifs mit user = owner automatisch]] [[mount cifs smb permission denied]] [[Convert Windows line endings to Linux line endings]] [[(Neo)Vim Konfiguration]] [[Xorg DPMS Bildschirm Konfiguration]] [[Linux graphical renaming tool]] [[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -9246,6 +9248,44 @@ find . -iregex '.*LALALALA.*' | gawk 'match($0,/S([[:digit:]])/,a) {print &quot;
 Nutzt die capture funktion von `gawk` mit der function `match`, welche die capture group (Klammern) in das array namens `a` speichert. Auf die Elemente der capture group wird hinterher mit `a[1]` zugegriffen&lt;br&gt;
 Zudem wird per gawk die vollständige command line erzeugt und mit pipe und sh ausgeführt.&lt;br&gt;
 Zum Testen einfach das `| &quot;sh&quot;` weglassen.
+</pre>
+</div>
+<div created="20190916141431148" modified="20190916142210584" tags="Configuration" title="chromium / chrome 3D acceleration in virtualbox">
+<pre>Problem: Browser (Chrome/Chromium) ist langsam / sluggish in virtualbox &lt;br&gt;
+Lösung:&lt;br&gt;
+Zunächst Prüfen, ob 3D Bescheunigung grundsätzlich aktiviert ist.&lt;br&gt;
+Zum Testen das Paket `mesa-demos` installieren.
+
+```
+sudo pacman -S mesa-demos
+```
+
+Dann Ergebnisse prüfen:&lt;br&gt;
+
+```
+glxgears
+glxinfo | grep OpenGL
+```
+
+Wenn die Zahnräder laufen und die OpenGL Zeilen ausgegeben werden ist grundsätzlich 3D Beschleunigung verfügbar.
+&lt;br&gt;
+
+
+Chromium konfigurieren:&lt;br&gt;
+Status der 3D Beschleunigung in Chromium abfragen:&lt;br&gt;
+
+```
+chrome://gpu
+```
+
+Wenn dort steht `3D acceleration unavailable` folgendes umstellen:
+
+
+```
+chrome://flags
+```
+
+`Override Software renderling list` aktivieren und Chromium neu starten.
 </pre>
 </div>
 <div created="20190305133033355" modified="20190306075636793" tags="Tools" title="command line fuzzy finder">
