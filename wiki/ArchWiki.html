@@ -257,6 +257,8 @@ Error message and password prompt
 
 <li>Xorg DPMS Bildschirm Konfiguration</li>
 
+<li>zathura seccomp Problem</li>
+
 <li>Zeichensatz / Encoding konvertieren</li>
 
 </ul>
@@ -8900,7 +8902,7 @@ autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[VirtualBox guest problems (e.g. copy paste)]] [[chromium / chrome 3D acceleration in virtualbox]] [[mount cifs mit user = owner automatisch]] [[mount cifs smb permission denied]] [[Convert Windows line endings to Linux line endings]] [[(Neo)Vim Konfiguration]] [[Xorg DPMS Bildschirm Konfiguration]] [[Linux graphical renaming tool]] [[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
+<div list="[[zathura seccomp Problem]] [[VirtualBox guest problems (e.g. copy paste)]] [[chromium / chrome 3D acceleration in virtualbox]] [[mount cifs mit user = owner automatisch]] [[mount cifs smb permission denied]] [[Convert Windows line endings to Linux line endings]] [[(Neo)Vim Konfiguration]] [[Xorg DPMS Bildschirm Konfiguration]] [[Linux graphical renaming tool]] [[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -8951,11 +8953,11 @@ autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1920&quot;
+            &quot;text&quot;: &quot;2560&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1200&quot;
+            &quot;text&quot;: &quot;1440&quot;
         }
     }
 }</pre>
@@ -9582,6 +9584,17 @@ Section &quot;Extensions&quot;
     Option      &quot;DPMS&quot; &quot;false&quot;
 EndSection
 ```</pre>
+</div>
+<div created="20190916163723303" modified="20190916163908207" tags="" title="zathura seccomp Problem">
+<pre>Zathura PDF reader startet unter WSL nicht wegen libseccomp.&lt;br&gt;
+
+Datei: `~/.config/zathura/zathurarc` anpassen&lt;br&gt;
+
+```
+set sandbox none
+```
+
+</pre>
 </div>
 <div created="20190409080313813" modified="20190409081255051" tags="Tools" title="Zeichensatz / Encoding konvertieren">
 <pre>Change character encoding of text file:&lt;br&gt;
