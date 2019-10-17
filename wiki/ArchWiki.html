@@ -223,6 +223,8 @@ Error message and password prompt
 
 <li>Dropbox on Arch</li>
 
+<li>DWM Statusbar</li>
+
 <li>entr   Tool zur Reaktion auf file changes</li>
 
 <li>Farben für ls tool</li>
@@ -8912,7 +8914,7 @@ autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[Dropbox DWM tray und systemd autostart]] [[Dropbox on Arch]] [[Kopieren von Bildern per sxiv]] [[Notebook disable internal Bildschirm]] [[Bluetooth problem]] [[zathura seccomp Problem]] [[VirtualBox guest problems (e.g. copy paste)]] [[chromium / chrome 3D acceleration in virtualbox]] [[mount cifs mit user = owner automatisch]] [[mount cifs smb permission denied]] [[Convert Windows line endings to Linux line endings]] [[(Neo)Vim Konfiguration]] [[Xorg DPMS Bildschirm Konfiguration]] [[Linux graphical renaming tool]] [[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
+<div list="[[DWM Statusbar]] [[Dropbox DWM tray und systemd autostart]] [[Dropbox on Arch]] [[Kopieren von Bildern per sxiv]] [[Notebook disable internal Bildschirm]] [[Bluetooth problem]] [[zathura seccomp Problem]] [[VirtualBox guest problems (e.g. copy paste)]] [[chromium / chrome 3D acceleration in virtualbox]] [[mount cifs mit user = owner automatisch]] [[mount cifs smb permission denied]] [[Convert Windows line endings to Linux line endings]] [[(Neo)Vim Konfiguration]] [[Xorg DPMS Bildschirm Konfiguration]] [[Linux graphical renaming tool]] [[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -9425,6 +9427,19 @@ dropbox-cli exclude
 ```
 
 listet alle Verszeichnisse auf, welche nicht synchronisiert werden.
+</pre>
+</div>
+<div created="20191017114254844" modified="20191017121129804" tags="Configuration" title="DWM Statusbar">
+<pre>Set text für DWM Statusbar&lt;br&gt;
+
+Folgender Aufruf kann in einen Script mit einer `while do done` Schleife verwendet werden:
+
+```
+xsetroot -name &quot;$(echo -e '\uf017') $(date)&quot;
+```
+
+Webseite für ICONS in NerdFont:&lt;br&gt;
+https://www.nerdfonts.com/cheat-sheet
 </pre>
 </div>
 <div created="20190306131024626" modified="20190306201324237" tags="" title="entr   Tool zur Reaktion auf file changes">
