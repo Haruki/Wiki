@@ -9381,7 +9381,7 @@ find . -type f -exec dos2unix {} \;
 ```
 </pre>
 </div>
-<div created="20191017110613180" modified="20191017155744031" tags="Tools" title="Dropbox DWM tray und systemd autostart">
+<div created="20191017110613180" modified="20191018211825378" tags="Tools" title="Dropbox DWM tray und systemd autostart">
 <pre>Systemd autostart:&lt;br&gt;
 
 Zuerst muss Dropbox mitgeteilt werden auf welchen Display es dargestellt werden soll (tray-icon)
@@ -9391,6 +9391,14 @@ sudo systemctl edit dropbox@walter.service
 ```
 
 wobei walter mit dem entsprechenden linuxuser zu ersetzen ist.
+
+In die Service-Datei folgendes eintragen:
+
+```
+Service]
+Environment=DISPLAY=:0
+```
+
 Die Serivce-Unit muss dann aktiviert und gestartet werden:
 
 ```
