@@ -269,6 +269,8 @@ Error message and password prompt
 
 <li>Tools</li>
 
+<li>TTF Font installation</li>
+
 <li>VirtualBox guest problems (e.g. copy paste)</li>
 
 <li>watch dmesg</li>
@@ -8928,7 +8930,7 @@ autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[DWM Statusbar Font]] [[DWM Statusbar]] [[Dropbox DWM tray und systemd autostart]] [[Dropbox on Arch]] [[Kopieren von Bildern per sxiv]] [[Notebook disable internal Bildschirm]] [[Bluetooth problem]] [[zathura seccomp Problem]] [[VirtualBox guest problems (e.g. copy paste)]] [[chromium / chrome 3D acceleration in virtualbox]] [[mount cifs mit user = owner automatisch]] [[mount cifs smb permission denied]] [[Convert Windows line endings to Linux line endings]] [[(Neo)Vim Konfiguration]] [[Xorg DPMS Bildschirm Konfiguration]] [[Linux graphical renaming tool]] [[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
+<div list="[[TTF Font installation]] [[DWM Statusbar Font]] [[DWM Statusbar]] [[Dropbox DWM tray und systemd autostart]] [[Dropbox on Arch]] [[Kopieren von Bildern per sxiv]] [[Notebook disable internal Bildschirm]] [[Bluetooth problem]] [[zathura seccomp Problem]] [[VirtualBox guest problems (e.g. copy paste)]] [[chromium / chrome 3D acceleration in virtualbox]] [[mount cifs mit user = owner automatisch]] [[mount cifs smb permission denied]] [[Convert Windows line endings to Linux line endings]] [[(Neo)Vim Konfiguration]] [[Xorg DPMS Bildschirm Konfiguration]] [[Linux graphical renaming tool]] [[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -8983,13 +8985,13 @@ autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1200&quot;
+            &quot;text&quot;: &quot;1080&quot;
         }
     }
 }</pre>
 </div>
-<div created="20180731090420761" modified="20191018233740155" title="$:/temp/search">
-<pre>trayer</pre>
+<div created="20180731090420761" modified="20191020153455563" title="$:/temp/search">
+<pre>font</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
 <pre>{
@@ -9666,6 +9668,29 @@ sudo teensy_loader_cli --mcu=at90usb646 -w hexfile.hex
 </div>
 <div created="20181215142754555" modified="20181215142811397" tags="TableOfContents" title="Tools">
 <pre>tools</pre>
+</div>
+<div created="20191020163505464" modified="20191020164007734" tags="Configuration" title="TTF Font installation">
+<pre>Standardverzeichnisse für ttf-fonts:&lt;br&gt;
+`/usr/share/fonts` global&lt;br&gt;
+`~/.local/share/fonts` user only&lt;br&gt;
+
+Kopieren der ttf in einen dieser Ordner.&lt;br&gt;
+
+Standard Nerdfont MesloLGS:
+
+
+https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf
+
+https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold.ttf
+
+https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Italic.ttf
+
+https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold%20Italic.ttf
+
+
+damit die Fonts &quot;sichtbar&quot; werden muss der font cache aktualisiert werden:
+`fc-cache`
+</pre>
 </div>
 <div created="20190916150711932" modified="20190916151216119" tags="" title="VirtualBox guest problems (e.g. copy paste)">
 <pre>Falls z.B. copy paste nicht funktioniert:&lt;br&gt;
