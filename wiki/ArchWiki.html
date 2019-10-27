@@ -8992,8 +8992,8 @@ autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
     }
 }</pre>
 </div>
-<div created="20180731090420761" modified="20191027205258009" title="$:/temp/search">
-<pre>blue</pre>
+<div created="20180731090420761" modified="20191027210447021" title="$:/temp/search">
+<pre>yay</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
 <pre>{
@@ -9789,14 +9789,27 @@ Section &quot;Extensions&quot;
 EndSection
 ```</pre>
 </div>
-<div created="20191025120912980" modified="20191025121029656" tags="" title="yay installation">
+<div created="20191025120912980" modified="20191027210637494" tags="" title="yay installation">
 <pre>Aus Repository:&lt;br&gt;
 
 ```
 git clone https://aur.archlinux.org/yay.git
 ```
 
-dann: `makepkg -si`</pre>
+dann: `makepkg -si`
+
+
+---
+
+ ''Update:'' evtl. notwendig wenn yay nicht mehr funktioniert
+
+```
+sudo pacman -R yay
+cd ~/yay
+git pull
+makepkg -si
+```
+ </pre>
 </div>
 <div created="20190916163723303" modified="20190916163908207" tags="" title="zathura seccomp Problem">
 <pre>Zathura PDF reader startet unter WSL nicht wegen libseccomp.&lt;br&gt;
