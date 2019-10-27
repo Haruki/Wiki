@@ -8992,8 +8992,8 @@ autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
     }
 }</pre>
 </div>
-<div created="20180731090420761" modified="20191025115251337" title="$:/temp/search">
-<pre>yay</pre>
+<div created="20180731090420761" modified="20191027205258009" title="$:/temp/search">
+<pre>blue</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
 <pre>{
@@ -9274,9 +9274,13 @@ sudo lsblk -o NAME,FSTYPE,UUID,RO,RM,SIZE,STATE,OWNER,GROUP,MODE,TYPE,MOUNTPOINT
 
 </pre>
 </div>
-<div created="20191012133924495" modified="20191012134207504" tags="" title="Bluetooth problem">
+<div created="20191012133924495" modified="20191027205900309" tags="" title="Bluetooth problem">
 <pre>connect bricht ab mit fehlermeldung&lt;br&gt;
 `Failed to connect: org.bluez.Error.Failed`&lt;br&gt;
+
+
+''Fehlersuche:'' `sudo journalctl | grep blue`&lt;br&gt;
+
 
 Folgendes Paket nachinstallieren:&lt;br&gt;
 
@@ -9284,7 +9288,23 @@ Folgendes Paket nachinstallieren:&lt;br&gt;
 sudo pacman -S bluez-hid2hci
 ```
 
-Danach ist der connect wieder möglich.</pre>
+Danach ist der connect wieder möglich.
+
+
+---
+
+''Möglichkeit 2''
+
+Unter `General` in `/etc/bluetooth/main.conf`:&lt;br&gt;
+
+Neu: `Enable=Source,Sink,Media,Socket`
+
+---
+
+''Möglichkeit 3''
+
+Paket neu installieren: `sudo pacman -S pulseaudio-bluetooth`
+</pre>
 </div>
 <div created="20190709135828303" modified="20190804111508968" tags="Tools" title="Bulk Renaming with gawk/awk">
 <pre>```
@@ -9770,8 +9790,7 @@ EndSection
 ```</pre>
 </div>
 <div created="20191025120912980" modified="20191025121029656" tags="" title="yay installation">
-<pre>
-Aus Repository:&lt;br&gt;
+<pre>Aus Repository:&lt;br&gt;
 
 ```
 git clone https://aur.archlinux.org/yay.git
