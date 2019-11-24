@@ -263,6 +263,8 @@ Error message and password prompt
 
 <li>Such-Tool silver-searcher Befehl ag</li>
 
+<li>synaptics touchpad</li>
+
 <li>TableOfContents</li>
 
 <li>Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool</li>
@@ -8934,7 +8936,7 @@ autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[Bluetooth autoconnect]] [[yay installation]] [[TTF Font installation]] [[DWM Statusbar Font]] [[DWM Statusbar]] [[Dropbox DWM tray und systemd autostart]] [[Dropbox on Arch]] [[Kopieren von Bildern per sxiv]] [[Notebook disable internal Bildschirm]] [[Bluetooth problem]] [[zathura seccomp Problem]] [[VirtualBox guest problems (e.g. copy paste)]] [[chromium / chrome 3D acceleration in virtualbox]] [[mount cifs mit user = owner automatisch]] [[mount cifs smb permission denied]] [[Convert Windows line endings to Linux line endings]] [[(Neo)Vim Konfiguration]] [[Xorg DPMS Bildschirm Konfiguration]] [[Linux graphical renaming tool]] [[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
+<div list="[[synaptics touchpad]] [[Bluetooth autoconnect]] [[yay installation]] [[TTF Font installation]] [[DWM Statusbar Font]] [[DWM Statusbar]] [[Dropbox DWM tray und systemd autostart]] [[Dropbox on Arch]] [[Kopieren von Bildern per sxiv]] [[Notebook disable internal Bildschirm]] [[Bluetooth problem]] [[zathura seccomp Problem]] [[VirtualBox guest problems (e.g. copy paste)]] [[chromium / chrome 3D acceleration in virtualbox]] [[mount cifs mit user = owner automatisch]] [[mount cifs smb permission denied]] [[Convert Windows line endings to Linux line endings]] [[(Neo)Vim Konfiguration]] [[Xorg DPMS Bildschirm Konfiguration]] [[Linux graphical renaming tool]] [[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -8985,11 +8987,11 @@ autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1920&quot;
+            &quot;text&quot;: &quot;1366&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1200&quot;
+            &quot;text&quot;: &quot;768&quot;
         }
     }
 }</pre>
@@ -9672,6 +9674,36 @@ ag -G &quot;Lieferschein.*\.txt&quot; -c halm_avwk /mnt/i/Lieferungen/FIG/2018
 
 Es werden alle Vorkommnisse von `halm_avwk` im Ordner `/mnt/i/Lieferungen/FIG/2018` gesucht. Dabei werden nur Dateien nach dem Regex-Muster `Lieferschein.*\.txt` berücksichtigt.
 Option `-c` bedeutet es wird hinter dem Dateinamen nur die Anzahl der matches angezeigt, statt jede Zeile aus der gefundenen Datei, die matcht.</pre>
+</div>
+<div created="20191124095453605" modified="20191124095832563" tags="" title="synaptics touchpad">
+<pre>`pacman -S xf86-input-synaptics `
+
+
+quelle:
+https://wiki.archlinux.org/index.php/Touchpad_Synaptics
+
+```
+Section &quot;InputClass&quot;
+    Identifier &quot;touchpad&quot;
+    Driver &quot;synaptics&quot;
+    MatchIsTouchpad &quot;on&quot;
+        Option &quot;TapButton1&quot; &quot;1&quot;
+        Option &quot;TapButton2&quot; &quot;3&quot;
+        Option &quot;TapButton3&quot; &quot;2&quot;
+        Option &quot;VertEdgeScroll&quot; &quot;on&quot;
+        Option &quot;VertTwoFingerScroll&quot; &quot;on&quot;
+        Option &quot;HorizEdgeScroll&quot; &quot;on&quot;
+        Option &quot;HorizTwoFingerScroll&quot; &quot;on&quot;
+        Option &quot;CircularScrolling&quot; &quot;on&quot;
+        Option &quot;CircScrollTrigger&quot; &quot;2&quot;
+        Option &quot;EmulateTwoFingerMinZ&quot; &quot;40&quot;
+        Option &quot;EmulateTwoFingerMinW&quot; &quot;8&quot;
+        Option &quot;CoastingSpeed&quot; &quot;0&quot;
+        Option &quot;FingerLow&quot; &quot;30&quot;
+        Option &quot;FingerHigh&quot; &quot;50&quot;
+        Option &quot;MaxTapTime&quot; &quot;125&quot;
+EndSection
+```</pre>
 </div>
 <div caption="Contents" created="20180731085806296" list-after="$:/core/ui/SideBar/Open" modified="20180731090154735" tags="$:/tags/SideBar" title="TableOfContents">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
