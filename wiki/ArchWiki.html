@@ -255,7 +255,7 @@ Error message and password prompt
 
 <li>mount cifs smb permission denied</li>
 
-<li>MPV Movie Player (continue where quit)</li>
+<li>MPV Movie Player</li>
 
 <li>neovim / nvim copy paste system clipboard</li>
 
@@ -280,6 +280,8 @@ Error message and password prompt
 <li>Tools</li>
 
 <li>TTF Font installation</li>
+
+<li>vim sudo vergessen</li>
 
 <li>VirtualBox guest problems (e.g. copy paste)</li>
 
@@ -8943,7 +8945,7 @@ autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[aktuell verbundenes WLAN anzeigen]] [[MPV Movie Player (continue where quit)]] [[nightmare keyboard arduino caterina bootloader]] [[synaptics touchpad]] [[Bluetooth autoconnect]] [[yay installation]] [[TTF Font installation]] [[DWM Statusbar Font]] [[DWM Statusbar]] [[Dropbox DWM tray und systemd autostart]] [[Dropbox on Arch]] [[Kopieren von Bildern per sxiv]] [[Notebook disable internal Bildschirm]] [[Bluetooth problem]] [[zathura seccomp Problem]] [[VirtualBox guest problems (e.g. copy paste)]] [[chromium / chrome 3D acceleration in virtualbox]] [[mount cifs mit user = owner automatisch]] [[mount cifs smb permission denied]] [[Convert Windows line endings to Linux line endings]] [[(Neo)Vim Konfiguration]] [[Xorg DPMS Bildschirm Konfiguration]] [[Linux graphical renaming tool]] [[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
+<div list="[[vim sudo vergessen]] [[aktuell verbundenes WLAN anzeigen]] [[MPV Movie Player]] [[nightmare keyboard arduino caterina bootloader]] [[synaptics touchpad]] [[Bluetooth autoconnect]] [[yay installation]] [[TTF Font installation]] [[DWM Statusbar Font]] [[DWM Statusbar]] [[Dropbox DWM tray und systemd autostart]] [[Dropbox on Arch]] [[Kopieren von Bildern per sxiv]] [[Notebook disable internal Bildschirm]] [[Bluetooth problem]] [[zathura seccomp Problem]] [[VirtualBox guest problems (e.g. copy paste)]] [[chromium / chrome 3D acceleration in virtualbox]] [[mount cifs mit user = owner automatisch]] [[mount cifs smb permission denied]] [[Convert Windows line endings to Linux line endings]] [[(Neo)Vim Konfiguration]] [[Xorg DPMS Bildschirm Konfiguration]] [[Linux graphical renaming tool]] [[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -9621,7 +9623,7 @@ modinfo muss erfolgreich geladenes modul melden.
 &lt;br&gt;
 Quelle: https://bbs.archlinux.org/viewtopic.php?id=233518</pre>
 </div>
-<div created="20200101183824871" modified="20200101184107169" tags="Configuration" title="MPV Movie Player (continue where quit)">
+<div created="20200101183824871" modified="20200103001351591" tags="Configuration" title="MPV Movie Player">
 <pre>Ziel: MPV soll eine Datei fortsetzen, wo abgebrochen wurde (automatisch)
 
 Datei `~/.config/mpv/mpv.conf` anpassen:&lt;br&gt;
@@ -9629,6 +9631,26 @@ Datei `~/.config/mpv/mpv.conf` anpassen:&lt;br&gt;
 ```
 &quot;save-position-on-quit&quot;
 ```
+----
+
+Loop all videos: `mpv.conf`&lt;br&gt;
+
+```
+loop-file=inf
+```
+
+----
+
+Next Video of playlist with mouse wheel:&lt;br&gt;
+Datei: `input.conf`&lt;br&gt;
+
+```
+WHEEL_UP playlist-prev
+WHEEL_DOWN playlist-next
+ctrl+a playlist-prev
+ctrl+s playlist-next
+```
+
 
 </pre>
 </div>
@@ -9798,6 +9820,19 @@ https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFon
 
 damit die Fonts &quot;sichtbar&quot; werden muss der font cache aktualisiert werden:
 `fc-cache`
+</pre>
+</div>
+<div created="20200103000542072" modified="20200103000859214" tags="Configuration" title="vim sudo vergessen">
+<pre>Ziel: Datei speichern, obwohl `sudo` vergessen.&lt;br&gt;
+config: `~/.vimrc`&lt;br&gt;
+
+```
+cmap w!! w !sudo tee &gt; /dev/null %
+```
+
+Für Details siehe:&lt;br&gt;
+
+https://stackoverflow.com/questions/2600783/how-does-the-vim-write-with-sudo-trick-work
 </pre>
 </div>
 <div created="20190916150711932" modified="20190916151216119" tags="" title="VirtualBox guest problems (e.g. copy paste)">
