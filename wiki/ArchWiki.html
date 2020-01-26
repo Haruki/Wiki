@@ -9756,11 +9756,12 @@ ag -G &quot;Lieferschein.*\.txt&quot; -c halm_avwk /mnt/i/Lieferungen/FIG/2018
 Es werden alle Vorkommnisse von `halm_avwk` im Ordner `/mnt/i/Lieferungen/FIG/2018` gesucht. Dabei werden nur Dateien nach dem Regex-Muster `Lieferschein.*\.txt` berücksichtigt.
 Option `-c` bedeutet es wird hinter dem Dateinamen nur die Anzahl der matches angezeigt, statt jede Zeile aus der gefundenen Datei, die matcht.</pre>
 </div>
-<div created="20200119152242167" modified="20200119152319189" tags="Configuration" title="sxiv slideshow alias">
+<div created="20200119152242167" modified="20200126140016771" tags="Configuration" title="sxiv slideshow alias">
 <pre>```
 slsh='find . -maxdepth 1 -type f | sort -R | sxiv -i -s f -S 5'
 ```
-</pre>
+
+alternativ: `feh -zZ` (z für random Reihenfolge und Z für auto-zoom auf  Bildschirmgrösse)</pre>
 </div>
 <div created="20191124095453605" modified="20191124095832563" tags="" title="synaptics touchpad">
 <pre>`pacman -S xf86-input-synaptics `
