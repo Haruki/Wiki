@@ -9004,13 +9004,13 @@ autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1080&quot;
+            &quot;text&quot;: &quot;1200&quot;
         }
     }
 }</pre>
 </div>
-<div created="20180731090420761" modified="20200119152146888" title="$:/temp/search">
-<pre>sxiv</pre>
+<div created="20180731090420761" modified="20200311071458698" title="$:/temp/search">
+<pre>powerlevel</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
 <pre>{
@@ -9183,7 +9183,7 @@ https://github.com/kdudka/csmock/commit/96a4a759a7de39f8da109202f4fa14c76a0ae68f
 
 </pre>
 </div>
-<div created="20190110125232990" modified="20190310212031378" tags="Configuration Installation" title="ArchWSL Windows Installation mit i3">
+<div created="20190110125232990" modified="20200311071547395" tags="Configuration Installation" title="ArchWSL Windows Installation mit i3">
 <pre>ArchWSL: https://github.com/yuk7/ArchWSL
 
 Installationsanleitung: https://www.youtube.com/watch?v=DUXONNnLW5g
@@ -9199,7 +9199,7 @@ shell.Run &quot;c:\data\ArchWSL\Arch.exe run &quot;&quot;~/.scripts/wlaunch&quot
 
 ''Wichtige Pakete:''
 
-`base-devel`,`w3m` und `compton` für transparenz, `termite` als terminal und noch `dmenu` für i3 standardconf
+`base-devel`,`w3m` und `compton` / `picom`  für transparenz, `termite` als terminal und noch `dmenu` für i3 standardconf
 
 
 !! '' Teil1:''
@@ -9263,7 +9263,7 @@ Font in Termite config file eintragen: `~/.config/termite/config`&lt;br/&gt;
 font = Hack Nerd Font Mono 14
 ```
 
-Wird powerlevel9k zusammen mit einem NerdFont verwendet muss powerlevel9k in den nerfont-complete mode gesetzt werden:&lt;/br&gt;
+Wird powerlevel9k / powerlevel10k zusammen mit einem NerdFont verwendet muss powerlevel9k in den nerfont-complete mode gesetzt werden:&lt;/br&gt;
 In `.zshrc`:&lt;br/&gt;
 
 ```
@@ -9552,8 +9552,8 @@ Einfach das Repository clonen und in der `.zshrc` die Datei `LS_COLORS` aus dem 
 eval $( dircolors -b $HOME/LS_COLORS/LS_COLORS )
 ```</pre>
 </div>
-<div created="20181224020835084" modified="20181224022146187" tags="Configuration" title="i3 Hintergrundbild">
-<pre>Composite manager muss installiert sein wie z.B.  `compton`
+<div created="20181224020835084" modified="20200311071325189" tags="Configuration" title="i3 Hintergrundbild">
+<pre>Composite manager muss installiert sein wie z.B.  `compton` oder der Nachfolger `picom`
 
 Eintragung in config file: `~/.config/i3/config` ganz unten:
 
