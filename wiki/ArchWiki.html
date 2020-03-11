@@ -287,6 +287,8 @@ Error message and password prompt
 
 <li>vim sudo vergessen</li>
 
+<li>VirtualBox automount shared folder</li>
+
 <li>VirtualBox guest problems (e.g. copy paste)</li>
 
 <li>watch dmesg</li>
@@ -8949,7 +8951,7 @@ autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[linux ocr pdf]] [[sxiv slideshow alias]] [[vim sudo vergessen]] [[aktuell verbundenes WLAN anzeigen]] [[MPV Movie Player]] [[nightmare keyboard arduino caterina bootloader]] [[synaptics touchpad]] [[Bluetooth autoconnect]] [[yay installation]] [[TTF Font installation]] [[DWM Statusbar Font]] [[DWM Statusbar]] [[Dropbox DWM tray und systemd autostart]] [[Dropbox on Arch]] [[Kopieren von Bildern per sxiv]] [[Notebook disable internal Bildschirm]] [[Bluetooth problem]] [[zathura seccomp Problem]] [[VirtualBox guest problems (e.g. copy paste)]] [[chromium / chrome 3D acceleration in virtualbox]] [[mount cifs mit user = owner automatisch]] [[mount cifs smb permission denied]] [[Convert Windows line endings to Linux line endings]] [[(Neo)Vim Konfiguration]] [[Xorg DPMS Bildschirm Konfiguration]] [[Linux graphical renaming tool]] [[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
+<div list="[[VirtualBox automount shared folder]] [[linux ocr pdf]] [[sxiv slideshow alias]] [[vim sudo vergessen]] [[aktuell verbundenes WLAN anzeigen]] [[MPV Movie Player]] [[nightmare keyboard arduino caterina bootloader]] [[synaptics touchpad]] [[Bluetooth autoconnect]] [[yay installation]] [[TTF Font installation]] [[DWM Statusbar Font]] [[DWM Statusbar]] [[Dropbox DWM tray und systemd autostart]] [[Dropbox on Arch]] [[Kopieren von Bildern per sxiv]] [[Notebook disable internal Bildschirm]] [[Bluetooth problem]] [[zathura seccomp Problem]] [[VirtualBox guest problems (e.g. copy paste)]] [[chromium / chrome 3D acceleration in virtualbox]] [[mount cifs mit user = owner automatisch]] [[mount cifs smb permission denied]] [[Convert Windows line endings to Linux line endings]] [[(Neo)Vim Konfiguration]] [[Xorg DPMS Bildschirm Konfiguration]] [[Linux graphical renaming tool]] [[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -9009,8 +9011,8 @@ autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
     }
 }</pre>
 </div>
-<div created="20180731090420761" modified="20200311071458698" title="$:/temp/search">
-<pre>powerlevel</pre>
+<div created="20180731090420761" modified="20200311094342663" title="$:/temp/search">
+<pre>virtualbox</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
 <pre>{
@@ -9867,6 +9869,15 @@ Für Details siehe:&lt;br&gt;
 
 https://stackoverflow.com/questions/2600783/how-does-the-vim-write-with-sudo-trick-work
 </pre>
+</div>
+<div created="20200311094356870" modified="20200311094827808" tags="" title="VirtualBox automount shared folder">
+<pre>damit der in VirtualBox konfigurierte shared folder automatisch gemountet werden kann muss der hauptuser (z.B. walter) in der gruppe `vboxsf`  sein.
+
+```
+ sudo adduser $USER vboxsf
+```
+
+log out und log in oder reboot erforderlich, damit die Änderung wirksam wird</pre>
 </div>
 <div created="20190916150711932" modified="20190916151216119" tags="" title="VirtualBox guest problems (e.g. copy paste)">
 <pre>Falls z.B. copy paste nicht funktioniert:&lt;br&gt;
