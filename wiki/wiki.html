@@ -191,6 +191,8 @@ Error message and password prompt
 
 <li>cron job konfiguration</li>
 
+<li>Draft of 'Keyboard Controller Reset'</li>
+
 <li>Draft of 'TableOfContents einrichten'</li>
 
 <li>Draft of 'TableOfContents'</li>
@@ -212,6 +214,8 @@ Error message and password prompt
 <li>Go / Golang autocomplete für vim / nvim /neovim</li>
 
 <li>Keyboard Controller Reset</li>
+
+<li>Keyboards</li>
 
 <li>kinoxFileScanner Setup</li>
 
@@ -8905,7 +8909,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[Keyboard Controller Reset]] [[Firefox addons]] [[Oracle Audit Trail]] Oracle [[Windows 10 Datum mit Wochentag]] [[AutoHotKey (AHK)]] GIT [[Kodi/Browser Toggle + Kodi Mute]] [[Oracle user password expired]] [[RDP Remote Desktop failed logins log]] [[show git commits per user in time period]] [[Windows 10 AltGr not working]] [[Oracle Database XE 18c Installation]] [[Pi-Hole update]] [[Yamon Yet another Monitor]] [[Router Konfiguration MS]] [[elasticsearch vm.max_map_count]] [[Tampermonkey externes Stylesheet (CSS)]] [[Tampermonkey externe Editierung]] [[Draft of 'TableOfContents einrichten']] [[TiddlyWiki Konfiguration]] [[Samba Server Konfiguration]] [[Windows Login Fingerabdruck / Fingerprint domain user]] [[Windows Startmenu eigene Verknüpfungen / shortcuts]] [[Terraria Server für XMAS und Halloween event]] [[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] Linux [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
+<div list="Linux Keyboards [[Draft of 'Keyboard Controller Reset']] [[Firefox addons]] [[Oracle Audit Trail]] Oracle [[Windows 10 Datum mit Wochentag]] [[AutoHotKey (AHK)]] GIT [[Kodi/Browser Toggle + Kodi Mute]] [[Oracle user password expired]] [[RDP Remote Desktop failed logins log]] [[show git commits per user in time period]] [[Windows 10 AltGr not working]] [[Oracle Database XE 18c Installation]] [[Pi-Hole update]] [[Yamon Yet another Monitor]] [[Router Konfiguration MS]] [[elasticsearch vm.max_map_count]] [[Tampermonkey externes Stylesheet (CSS)]] [[Tampermonkey externe Editierung]] [[Draft of 'TableOfContents einrichten']] [[TiddlyWiki Konfiguration]] [[Samba Server Konfiguration]] [[Windows Login Fingerabdruck / Fingerprint domain user]] [[Windows Startmenu eigene Verknüpfungen / shortcuts]] [[Terraria Server für XMAS und Halloween event]] [[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -9230,6 +9234,18 @@ or every 15 minutes
 
 Note that the day-of-week goes from 0-6 where 0 is Sunday.</pre>
 </div>
+<div created="20200329143749671" draft.of="Keyboard Controller Reset" draft.title="Keyboard Controller Reset" modified="20200523175943335" tags="" title="Draft of 'Keyboard Controller Reset'">
+<pre>pegasus_hoof: magnet reset
+
+pegasus_hoof flashing: (only manual)
+
+```
+sudo dfu-programmer atmega32u2 erase
+sudo dfu-programmer atmega32u2 flash binaries/[flake|paw|hoof|petal]_ANSI_ISO_JIS.hex
+sudo dfu-programmer atmega32u2 start
+```
+</pre>
+</div>
 <div created="20180731100709129" draft.of="TableOfContents einrichten" draft.title="f" modified="20190514084020358" tags="[[TiddlyWiki Konfiguration]]" title="Draft of 'TableOfContents einrichten'">
 <pre>Siehe imgur Screenshot
 [img[https://i.imgur.com/MAhBwv2.png]]
@@ -9279,7 +9295,7 @@ Weitere Parameter:
 
 </pre>
 </div>
-<div created="20191025111442943" modified="20191025111714288" tags="" title="Firefox addons">
+<div created="20191025111442943" modified="20200523175906801" tags="Windows" title="Firefox addons">
 <pre>* Vimium
 * uBlock Origin
 * NoScript
@@ -9421,6 +9437,9 @@ sudo dfu-programmer atmega32u2 start
 ```
 </pre>
 </div>
+<div created="20200523175930489" modified="20200523175939804" tags="TableOfContents" title="Keyboards">
+<pre></pre>
+</div>
 <div created="20180730090607404" modified="20180731151340807" tags="Linux" title="kinoxFileScanner Setup">
 <pre>#clone from github
 #npm install
@@ -9465,7 +9484,7 @@ Numpad7::#8
 ```
 </pre>
 </div>
-<div created="20180731090255609" modified="20190803225351591" tags="TableOfContents" title="Linux">
+<div created="20180731090255609" modified="20200523180025328" tags="TableOfContents" title="Linux">
 <pre>Anleitungen für Linux / WSL</pre>
 </div>
 <div created="20180809224318248" modified="20180809224456660" tags="Linux" title="Linux Dell Laptop Fan Noise Control">
@@ -9577,7 +9596,7 @@ nvm install node
 <div created="20190626102121937" modified="20190626102123360" tags="TableOfContents" title="Oracle">
 <pre></pre>
 </div>
-<div created="20190812143549433" modified="20190812145211842" tags="" title="Oracle Audit Trail">
+<div created="20190812143549433" modified="20200523175844418" tags="Oracle" title="Oracle Audit Trail">
 <pre>Bei aktivierter Audit-Funktion kann unter Umständen der Festplattenplatz vollaufen.
 
 Verzeichnis: (ggf. alles Löschen)&lt;br&gt;
