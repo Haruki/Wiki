@@ -191,8 +191,6 @@ Error message and password prompt
 
 <li>cron job konfiguration</li>
 
-<li>Draft of 'Keyboard Controller Reset'</li>
-
 <li>Draft of 'TableOfContents einrichten'</li>
 
 <li>Draft of 'TableOfContents'</li>
@@ -302,6 +300,8 @@ Error message and password prompt
 <li>Windows 10 AltGr not working</li>
 
 <li>Windows 10 Datum mit Wochentag</li>
+
+<li>Windows 10 reset icon cache</li>
 
 <li>Windows Login Fingerabdruck / Fingerprint domain user</li>
 
@@ -8909,7 +8909,7 @@ Error message and password prompt
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="Linux Keyboards [[Draft of 'Keyboard Controller Reset']] [[Firefox addons]] [[Oracle Audit Trail]] Oracle [[Windows 10 Datum mit Wochentag]] [[AutoHotKey (AHK)]] GIT [[Kodi/Browser Toggle + Kodi Mute]] [[Oracle user password expired]] [[RDP Remote Desktop failed logins log]] [[show git commits per user in time period]] [[Windows 10 AltGr not working]] [[Oracle Database XE 18c Installation]] [[Pi-Hole update]] [[Yamon Yet another Monitor]] [[Router Konfiguration MS]] [[elasticsearch vm.max_map_count]] [[Tampermonkey externes Stylesheet (CSS)]] [[Tampermonkey externe Editierung]] [[Draft of 'TableOfContents einrichten']] [[TiddlyWiki Konfiguration]] [[Samba Server Konfiguration]] [[Windows Login Fingerabdruck / Fingerprint domain user]] [[Windows Startmenu eigene Verknüpfungen / shortcuts]] [[Terraria Server für XMAS und Halloween event]] [[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
+<div list="[[Windows 10 reset icon cache]] [[Keyboard Controller Reset]] Linux Keyboards [[Firefox addons]] [[Oracle Audit Trail]] Oracle [[Windows 10 Datum mit Wochentag]] [[AutoHotKey (AHK)]] GIT [[Kodi/Browser Toggle + Kodi Mute]] [[Oracle user password expired]] [[RDP Remote Desktop failed logins log]] [[show git commits per user in time period]] [[Windows 10 AltGr not working]] [[Oracle Database XE 18c Installation]] [[Pi-Hole update]] [[Yamon Yet another Monitor]] [[Router Konfiguration MS]] [[elasticsearch vm.max_map_count]] [[Tampermonkey externes Stylesheet (CSS)]] [[Tampermonkey externe Editierung]] [[Draft of 'TableOfContents einrichten']] [[TiddlyWiki Konfiguration]] TiddlyWiki [[Samba Server Konfiguration]] [[Windows Login Fingerabdruck / Fingerprint domain user]] [[Windows Startmenu eigene Verknüpfungen / shortcuts]] [[Terraria Server für XMAS und Halloween event]] [[Go / Golang autocomplete für vim / nvim /neovim]] [[vim / nvim commands]] [[tmux commands]] [[cron job konfiguration]] [[Linux Dell Laptop Fan Noise Control]] [[VIM / NeoVim Windows Einstellungen]] VIM [[Windows symlinks (hard + soft)]] [[TiddlyWiki Backup]] [[Git credentials speichern (cli)]] [[Neovim auf linux shell]] [[Temporäre Login Sperre nach 3 Fehlversuchen]] [[Kodi Konfiguration Belegung Fernbedienung]] [[PI-Hole hosts Datei für pimpelkram.com]] [[Oracle DropBox Backup]] [[SSH Client Konfiguration]] [[SSH public key importieren]] [[GitLab VM Einrichten]] [[Server Dashboard (Grafana)]] [[Caddy Web-Server Konfiguration]] [[Virtualbox VRDE Ports]] [[Network devices MS]] [[Manuelle Netzwerk Konfiguration (Linux)]] [[Festplatten standby mit hdparm]] [[Emby Media Server]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -8969,8 +8969,8 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20180731090420761" modified="20200329143456874" title="$:/temp/search">
-<pre>reset</pre>
+<div created="20180731090420761" modified="20200523190449832" title="$:/temp/search">
+<pre>keyb</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
 <pre>{
@@ -9234,18 +9234,6 @@ or every 15 minutes
 
 Note that the day-of-week goes from 0-6 where 0 is Sunday.</pre>
 </div>
-<div created="20200329143749671" draft.of="Keyboard Controller Reset" draft.title="Keyboard Controller Reset" modified="20200523175943335" tags="" title="Draft of 'Keyboard Controller Reset'">
-<pre>pegasus_hoof: magnet reset
-
-pegasus_hoof flashing: (only manual)
-
-```
-sudo dfu-programmer atmega32u2 erase
-sudo dfu-programmer atmega32u2 flash binaries/[flake|paw|hoof|petal]_ANSI_ISO_JIS.hex
-sudo dfu-programmer atmega32u2 start
-```
-</pre>
-</div>
 <div created="20180731100709129" draft.of="TableOfContents einrichten" draft.title="f" modified="20190514084020358" tags="[[TiddlyWiki Konfiguration]]" title="Draft of 'TableOfContents einrichten'">
 <pre>Siehe imgur Screenshot
 [img[https://i.imgur.com/MAhBwv2.png]]
@@ -9425,7 +9413,7 @@ install gocode autocomplete deamon.
 Anleitung: `https://github.com/mdempsky/gocode`
 </pre>
 </div>
-<div created="20200329143749671" modified="20200329145421209" tags="" title="Keyboard Controller Reset">
+<div created="20200329143749671" modified="20200523190513836" tags="" title="Keyboard Controller Reset">
 <pre>pegasus_hoof: magnet reset
 
 pegasus_hoof flashing: (only manual)
@@ -9437,7 +9425,7 @@ sudo dfu-programmer atmega32u2 start
 ```
 </pre>
 </div>
-<div created="20200523175930489" modified="20200523175939804" tags="TableOfContents" title="Keyboards">
+<div created="20200523175930489" modified="20200523190430920" tags="TableOfContents" title="Keyboards">
 <pre></pre>
 </div>
 <div created="20180730090607404" modified="20180731151340807" tags="Linux" title="kinoxFileScanner Setup">
@@ -10232,6 +10220,15 @@ TTT.TT.MM.JJJJ
 ```
 
 
+</pre>
+</div>
+<div created="20200523190520358" modified="20200523190906463" tags="Windows" title="Windows 10 reset icon cache">
+<pre># Task-Manager öffnen
+# &gt; &quot;mehr Details&quot;
+# Datei -&gt; Neuen Task Ausführen
+# %localappdata%
+# Datei iconcache.db löschen
+# Prozess &quot;Windows explorer&quot; neu starten mit dem Task-Manager
 </pre>
 </div>
 <div created="20180821121725525" modified="20180821122134190" tags="Windows" title="Windows Login Fingerabdruck / Fingerprint domain user">
