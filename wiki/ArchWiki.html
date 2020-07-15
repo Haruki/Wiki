@@ -9023,8 +9023,8 @@ autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
     }
 }</pre>
 </div>
-<div created="20180731090420761" modified="20200322181208597" title="$:/temp/search">
-<pre>i3status</pre>
+<div created="20180731090420761" modified="20200715141257673" title="$:/temp/search">
+<pre>rsync</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
 <pre>{
@@ -9746,9 +9746,21 @@ rm -rf /opt/oracle/diag/rdbms/xe/XE/trace/*
 ```
 </pre>
 </div>
-<div created="20200714151145242" modified="20200714151209352" tags="Tools" title="pixz multithread compressor/decompressor">
-<pre>pixz &lt; data.tar &gt; compressed.tpxz
-pixz -d &lt; compressed.xz &gt; output</pre>
+<div created="20200714151145242" modified="20200715144725204" tags="Tools" title="pixz multithread compressor/decompressor">
+<pre>pixz &lt; data.tar &gt; compressed.tpxz&lt;br&gt;
+pixz -d &lt; compressed.xz &gt; output
+
+pixz &lt; myfile &gt; myfile.xz&lt;br&gt;
+           Compress a file with pixz.&lt;br&gt;
+
+       pixz myfile&lt;br&gt;
+           Compress to myfile.pxz, removing the original.&lt;br&gt;
+
+       tar -Ipixz -cf output.tpxz directory&lt;br&gt;
+           Make tar use pixz for compression.&lt;br&gt;
+
+       pixz -x path/to/file &lt; input.tpxz | tar x&lt;br&gt;
+           Extract one file from an archive, quickly.&lt;br&gt;</pre>
 </div>
 <div created="20181217092011744" modified="20190607222646090" tags="Configuration" title="Screen Tearing Inspiron e5520 intel grafik">
 <pre>Out of the box ist bei der Installation auf dem Dell Inspiron e5520 Notebook für die Intel Grafik kein V-Sync aktiviert. D.h. z.B. der Browser oder auch der Mediaplayer `mpv` zeigen &quot;tearing&quot;.
