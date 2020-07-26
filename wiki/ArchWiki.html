@@ -241,6 +241,8 @@ Error message and password prompt
 
 <li>entr   Tool zur Reaktion auf file changes</li>
 
+<li>Erstellung und Anzeige von QR-Codes (Linux)</li>
+
 <li>Farben für ls tool</li>
 
 <li>i3 Hintergrundbild</li>
@@ -8965,7 +8967,7 @@ autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 <div created="20180808130051252" modified="20180808130051252" title="$:/state/toc/TableOfContents-Windows--81657105">
 <pre>open</pre>
 </div>
-<div list="[[raspberry pi wireguard vpn install]] [[snap wekan kanban board]] [[pixz multithread compressor/decompressor]] [[Oracle Datenbank trace ordner leeren]] [[cd rip musik]] [[vim nvim multi line comment insert]] [[i3status i3bar cpu last problem]] [[VirtualBox automount shared folder]] [[linux ocr pdf]] [[sxiv slideshow alias]] [[vim sudo vergessen]] [[aktuell verbundenes WLAN anzeigen]] [[MPV Movie Player]] [[nightmare keyboard arduino caterina bootloader]] [[synaptics touchpad]] [[Bluetooth autoconnect]] [[yay installation]] [[TTF Font installation]] [[DWM Statusbar Font]] [[DWM Statusbar]] [[Dropbox DWM tray und systemd autostart]] [[Dropbox on Arch]] [[Kopieren von Bildern per sxiv]] [[Notebook disable internal Bildschirm]] [[Bluetooth problem]] [[zathura seccomp Problem]] [[VirtualBox guest problems (e.g. copy paste)]] [[chromium / chrome 3D acceleration in virtualbox]] [[mount cifs mit user = owner automatisch]] [[mount cifs smb permission denied]] [[Convert Windows line endings to Linux line endings]] [[(Neo)Vim Konfiguration]] [[Xorg DPMS Bildschirm Konfiguration]] [[Linux graphical renaming tool]] [[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
+<div list="[[Erstellung und Anzeige von QR-Codes (Linux)]] [[raspberry pi wireguard vpn install]] [[snap wekan kanban board]] [[pixz multithread compressor/decompressor]] [[Oracle Datenbank trace ordner leeren]] [[cd rip musik]] [[vim nvim multi line comment insert]] [[i3status i3bar cpu last problem]] [[VirtualBox automount shared folder]] [[linux ocr pdf]] [[sxiv slideshow alias]] [[vim sudo vergessen]] [[aktuell verbundenes WLAN anzeigen]] [[MPV Movie Player]] [[nightmare keyboard arduino caterina bootloader]] [[synaptics touchpad]] [[Bluetooth autoconnect]] [[yay installation]] [[TTF Font installation]] [[DWM Statusbar Font]] [[DWM Statusbar]] [[Dropbox DWM tray und systemd autostart]] [[Dropbox on Arch]] [[Kopieren von Bildern per sxiv]] [[Notebook disable internal Bildschirm]] [[Bluetooth problem]] [[zathura seccomp Problem]] [[VirtualBox guest problems (e.g. copy paste)]] [[chromium / chrome 3D acceleration in virtualbox]] [[mount cifs mit user = owner automatisch]] [[mount cifs smb permission denied]] [[Convert Windows line endings to Linux line endings]] [[(Neo)Vim Konfiguration]] [[Xorg DPMS Bildschirm Konfiguration]] [[Linux graphical renaming tool]] [[Bulk Renaming with gawk/awk]] [[Arch from scratch installation]] [[watch dmesg]] $:/Import [[ssh terminal problem with WSL]] [[Command line: relativen Pfad in absoluten Pfad umwandeln]] [[Zeichensatz / Encoding konvertieren]] [[java / kotlin]] [[alias für df(diskfree) ohne loop und tmp]] [[Farben für ls tool]] [[Arch on WSL: libQt5Core.so.5 not found]] [[entr   Tool zur Reaktion auf file changes]] [[command line fuzzy finder]] [[ArchWSL Windows Installation mit i3]] [[neovim / nvim copy paste system clipboard]] [[Tastaturbefehle an andere Prozesse / Fenster senden mit xdotool]] [[i3 Hintergrundbild]] [[Such-Tool silver-searcher Befehl ag]] [[Teensy Loader CLI Aufruf für LFKeyboards TKL]] [[Compile Teensy_loader_cli on Arch]] [[Screen Tearing Inspiron e5520 intel grafik]] [[block devices &quot;lsblk&quot; mit UUID und Model]] [[XEV Keycode Tool]] Tools Installation" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180731090434429" modified="20180731093312312" title="$:/temp/advancedsearch">
@@ -9568,6 +9570,15 @@ Beispiel:
 ```
 ls *.css *.html | entr reload-browser Firefox
 ```</pre>
+</div>
+<div created="20200726131933684" modified="20200726132140064" tags="Tools" title="Erstellung und Anzeige von QR-Codes (Linux)">
+<pre>Tool: &quot;qrencode&quot;&lt;br&gt;
+Beispiel Anzeige eines Dateiinhaltes im Terminal: 
+
+```
+qrencode -t ansiutf8 &lt; dateiname.txt
+```
+</pre>
 </div>
 <div created="20190311134355336" modified="20200322182439405" tags="Configuration" title="Farben für ls tool">
 <pre>Das Tool zur Auflistung von Dateien `ls` erzeugt oft unschöne Farben.&lt;br/&gt;
