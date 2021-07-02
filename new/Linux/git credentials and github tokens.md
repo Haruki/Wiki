@@ -27,5 +27,7 @@ Default Speicherort: `~\.git-credentials`
 
 Custom Speicherort: zum Commando Parameter `--file <filename>` hinzufügen.
 
+Wird jetzt bei einer Git-Aktion ein passwort benötigt muss/sollte das neue Github token verwendet werden. Dabei werden aufgrund des vorherigen `git config` Befehls die credentials in der Datei `~\.git-credentials` gespeichert.
 
+Die darauf folgende nächste Git-Aktion, welche ein Passwort benötigt, sollte dann keine Abfrage der credentials mehr zur Folge haben.
 
