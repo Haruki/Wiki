@@ -23,6 +23,8 @@ sudo pacman -S exa
 
 add to `.zshrc`
 
+also add: `alias ls="exa --color"`
+
 ### Liste von Keys für EXA_COLORS:
 
 ![EXA color keys](https://www.dropbox.com/s/solrao36xmdi55w/2021-07-exa_keys_exa.png?raw=1 "EXA color keys")
