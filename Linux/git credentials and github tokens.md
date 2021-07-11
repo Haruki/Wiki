@@ -20,6 +20,9 @@ Token sind spezifisch für einen konkreten git-client auf einer bestimmten Masch
 
 Folgender Befehl aktiviert das Speichern der Credentials bei der nächsten Git-Aktion für die eine Authentifizierung notwendig ist (z.B. `git push`)
 
+### Achtung: Aktivierung des creditial Speicherns gilt pro repository! 
+Es muss also für jedes Repository (erneut) ausgeführt werden.
+
 ```
 git config credential.helper store
 ```
